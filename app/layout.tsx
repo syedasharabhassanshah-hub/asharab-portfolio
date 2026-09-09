@@ -60,7 +60,14 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${bricolage.variable} ${geist.variable}`}>
+    // Browser extensions commonly add their own attributes to <html> before
+    // React hydrates, which reads as a mismatch. Suppression here applies to
+    // this element only, so genuine mismatches deeper in the tree still warn.
+    <html
+      lang="en"
+      className={`${bricolage.variable} ${geist.variable}`}
+      suppressHydrationWarning
+    >
       <body className="grain antialiased">
         <a
           href="#work"
