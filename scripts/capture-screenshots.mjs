@@ -6,8 +6,8 @@
  *   npm run shots
  *
  * Capture is slow the first time a URL is requested — the service loads the
- * page in a real browser — so each request gets a generous timeout and two
- * retries before falling back to the second provider.
+ * page in a real browser — so each request gets a generous timeout and three
+ * spaced retries before falling back to the second provider.
  */
 import { mkdir, writeFile, readFile } from "node:fs/promises";
 import { join, dirname } from "node:path";
@@ -20,7 +20,10 @@ const outDir = join(root, "public", "work");
 const WIDTH = 1280;
 const QUALITY = 78;
 const TIMEOUT_MS = 90_000;
-const RETRIES = 2;
+const RETRIES = 3;
+/** mShots returns a placeholder until it has generated the capture, and
+ *  thum.io can shoot before paint. Both need a real wait, not a quick retry. */
+const RETRY_DELAY_MS = 25_000;
 
 /** Reads the project list straight from the TypeScript source. */
 async function readProjects() {
@@ -100,8 +103,8 @@ async function capture({ slug, url }) {
       } catch (error) {
         const label = new URL(src).hostname;
         console.log(`  ${slug}: ${label} attempt ${attempt} — ${error.message}`);
-        // Give the service a moment to finish rendering before trying again.
-        await new Promise((resolve) => setTimeout(resolve, 5_000));
+        // Give the service time to finish rendering before trying again.
+        await new Promise((resolve) => setTimeout(resolve, RETRY_DELAY_MS));
       }
     }
   }

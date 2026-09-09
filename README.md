@@ -27,8 +27,8 @@ component.
 
 | File | Holds |
 | --- | --- |
-| `lib/site.ts` | Name, role, email, Fiverr and LinkedIn links, site URL |
-| `lib/projects.ts` | The seven client projects |
+| `lib/site.ts` | Name, role, email, links, site URL, total sites built |
+| `lib/projects.ts` | The client projects shown publicly |
 | `lib/content.ts` | Services, process steps, skills, industries |
 
 ### Adding a project
@@ -58,7 +58,7 @@ everywhere — hero marquee, work section, and the structured data.
 `npm run shots` captures every URL in `lib/projects.ts` and writes a compressed
 WebP to `public/work/<slug>.webp`. Screenshots are captured ahead of time rather
 than proxied live, so no page load ever waits on a third-party service. All
-seven currently total 444 KB, and the image optimizer serves them as AVIF at
+nine currently total 588 KB, and the image optimizer serves them as AVIF at
 roughly 40–70 KB each.
 
 Capture services occasionally shoot before a page has painted and return a
@@ -108,6 +108,6 @@ the base for the canonical URL, Open Graph tags, and the JSON-LD.
   `aria-invalid` and `aria-describedby`, and `prefers-reduced-motion` honoured
   throughout (the hero marquee stops entirely).
 - **SEO**: per-page metadata, Open Graph and Twitter cards, and `Person`
-  JSON-LD listing all seven sites.
+  JSON-LD listing every shown project.
 - **Still to add**: an Open Graph share image at `public/og.png`
   (1200×630), referenced from `app/layout.tsx`.

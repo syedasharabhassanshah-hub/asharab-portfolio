@@ -11,9 +11,12 @@ export default function About() {
 
             <div className="mt-8 flex flex-col gap-6 text-base leading-relaxed text-muted sm:text-lg">
               <p className="text-bone">
-                I&rsquo;m {site.fullName} — most people call me Asharab. Since
-                2020 I&rsquo;ve been building websites for businesses that need
-                them to work, not just look good in a portfolio.
+                I&rsquo;m {site.fullName} — most people call me Asharab. Since{" "}
+                {site.since} I&rsquo;ve built more than fifty websites for
+                businesses that need them to work, not just look good in a
+                portfolio. Only a handful appear on this page; most clients
+                prefer their projects stay private, and that is their call to
+                make.
               </p>
               <p>
                 That work has covered a wide spread: ecommerce brands, medical

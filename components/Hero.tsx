@@ -20,9 +20,11 @@ export default function Hero() {
 
           <p className="mt-8 max-w-[38rem] text-base leading-relaxed text-muted sm:text-lg">
             {site.fullName}, web developer and digital solutions partner. Since
-            2020 I&rsquo;ve built storefronts, service sites, and search
-            visibility for medical equipment suppliers, ecommerce brands,
-            consultancies, and the local trades.
+            {" "}
+            {site.since} I&rsquo;ve built more than fifty of them &mdash;
+            storefronts, service sites, and search visibility for medical
+            equipment suppliers, ecommerce brands, consultancies, and the local
+            trades.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -42,9 +44,12 @@ export default function Hero() {
 
           <dl className="mt-16 grid max-w-lg grid-cols-3 gap-6 border-t border-ink-line pt-8">
             {[
-              { value: `${projects.length}`, label: "Client sites shipped" },
-              { value: "2020", label: "Building since" },
-              { value: "8+", label: "Industries served" },
+              { value: site.totalBuilt, label: "Websites built" },
+              { value: site.since, label: "Building since" },
+              {
+                value: `${projects.length}`,
+                label: "Shown here, with client permission",
+              },
             ].map((stat) => (
               <div key={stat.label}>
                 <dt className="sr-only">{stat.label}</dt>

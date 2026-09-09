@@ -1,3 +1,4 @@
+import { site } from "@/lib/site";
 import { projects } from "@/lib/projects";
 import SiteShot from "@/components/ui/SiteShot";
 import BrowserFrame from "@/components/ui/BrowserFrame";
@@ -10,8 +11,10 @@ export default function Work() {
         <div className="max-w-3xl">
           <h2 className="type-section">Selected work</h2>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-muted">
-            Seven live businesses. Every link below opens the real site, running
-            in production today.
+            Most of the {site.totalBuilt} sites I&rsquo;ve built stay private at
+            the client&rsquo;s request. These {projects.length} agreed to be
+            shown, and every link opens the real site, running in production
+            today.
           </p>
         </div>
 

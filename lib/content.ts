@@ -77,4 +77,5 @@ export const industries = [
   "Doctors & psychological consultants",
   "Painters, electricians & carpenters",
   "Logistics & fleet services",
+  "Home protection & property maintenance",
 ] as const;

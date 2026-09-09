@@ -48,6 +48,23 @@ export const projects: Project[] = [
     tint: ["#12284D", "#26507F"],
   },
   {
+    slug: "alif-counseling",
+    name: "Alif Counseling Services",
+    url: "https://alifcounseling.com/",
+    domain: "alifcounseling.com",
+    sector: "Mental Health & Counseling",
+    headline: "Culturally-informed counseling for the Dallas community",
+    summary:
+      "A Frisco, TX practice offering culturally responsive therapy to South Asian, Muslim, and immigrant families. Someone looking for a therapist is often anxious before the page even loads, so the priority was a calm, unhurried layout that makes the first step feel small.",
+    contributions: [
+      "Separate paths for adult, youth, and couples care",
+      "Specialist pages for EMDR and faith-integrated therapy",
+      "Low-pressure appointment enquiry flow",
+    ],
+    stack: ["WordPress", "Accessibility", "Service pages", "Appointments"],
+    tint: ["#1B2547", "#4C5FA8"],
+  },
+  {
     slug: "intertec-system",
     name: "Intertec System",
     url: "https://intertecsystemllc.com/",
@@ -63,6 +80,23 @@ export const projects: Project[] = [
     ],
     stack: ["WordPress", "WooCommerce", "Custom Layouts", "Speed Optimisation"],
     tint: ["#0B2E53", "#1E6FA8"],
+  },
+  {
+    slug: "phs-scotland",
+    name: "Premier Home Solutions",
+    url: "https://phsscotland.com/",
+    domain: "phsscotland.com",
+    sector: "Home Protection & Property Maintenance",
+    headline: "Protect your home with professional solutions",
+    summary:
+      "A Glasgow trades business working across Scotland: wall and roof coating, painting, and chemical cleaning. Homeowners buying weatherproofing need proof before they need a price, so accreditation, warranties, and finished work lead the page.",
+    contributions: [
+      "Four service lines with plain-English explanations",
+      "Trust layer: Pro-Perla accreditation and warranty terms",
+      "Completed-project gallery and quote enquiry flow",
+    ],
+    stack: ["WordPress", "Service pages", "Responsive UI", "Lead capture"],
+    tint: ["#132B3A", "#37788C"],
   },
   {
     slug: "quick-route",
