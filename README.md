@@ -66,6 +66,37 @@ blank frame. The script measures pixel variation and rejects those
 automatically, retrying and then falling back to a second provider. Re-run it
 whenever a client site is redesigned.
 
+## Recorded leads
+
+Every valid enquiry is appended to `data/leads.jsonl` — one JSON object per
+line. Append-only on purpose: one write call per lead, so two submissions
+arriving together cannot clobber each other the way rewriting a JSON array
+would. Recording happens on every path, including a failed send, because a
+lead that could not be emailed is the one most worth keeping. A storage
+failure never surfaces to the visitor; the lead is dumped to the server log
+instead.
+
+| Command | What it does |
+| --- | --- |
+| `npm run leads` | List every enquiry, newest first |
+| `npm run leads -- --csv` | Write `data/leads.csv` for Excel or Sheets |
+| `npm run leads -- --json` | Print raw JSON |
+
+`data/` is gitignored. It holds other people's names, emails, and business
+details, and must not go into the repository.
+
+> **This works locally only.** Vercel's filesystem is read-only apart from
+> `/tmp`, which is wiped between requests, so `data/leads.jsonl` cannot be
+> written in production. Before relying on the deployed form, either set
+> `RESEND_API_KEY` so enquiries arrive by email, or move the store to a
+> database — see "Leads in production" below.
+
+### Leads in production
+
+The storage functions are isolated in `lib/leads.ts` behind `recordLead()` and
+`readLeads()`. Nothing else in the app touches the file. Swapping the file for
+a database means rewriting those two functions and nothing else.
+
 ## Contact form
 
 `POST /api/contact` validates with Zod on both the client and the server, and
@@ -109,5 +140,5 @@ the base for the canonical URL, Open Graph tags, and the JSON-LD.
   throughout (the hero marquee stops entirely).
 - **SEO**: per-page metadata, Open Graph and Twitter cards, and `Person`
   JSON-LD listing every shown project.
-- **Still to add**: an Open Graph share image at `public/og.png`
-  (1200×630), referenced from `app/layout.tsx`.
+- **Open Graph image**: generated at build time by `app/opengraph-image.tsx`,
+  so it always reflects `lib/site.ts`. No PNG to keep in sync by hand.

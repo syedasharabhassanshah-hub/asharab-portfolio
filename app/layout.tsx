@@ -60,15 +60,16 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    // Browser extensions commonly add their own attributes to <html> before
-    // React hydrates, which reads as a mismatch. Suppression here applies to
-    // this element only, so genuine mismatches deeper in the tree still warn.
+    // Browser extensions commonly add their own attributes to <html> and
+    // <body> before React hydrates, which reads as a mismatch (Grammarly is
+    // the usual culprit). Suppression applies only to the element it is set
+    // on, so genuine mismatches deeper in the tree still warn.
     <html
       lang="en"
       className={`${bricolage.variable} ${geist.variable}`}
       suppressHydrationWarning
     >
-      <body className="grain antialiased">
+      <body className="grain antialiased" suppressHydrationWarning>
         <a
           href="#work"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-signal focus:px-5 focus:py-2.5 focus:text-sm focus:font-semibold focus:text-ink"

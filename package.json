@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
-    "shots": "node scripts/capture-screenshots.mjs"
+    "shots": "node scripts/capture-screenshots.mjs",
+    "leads": "tsx scripts/leads.ts"
   },
   "dependencies": {
     "next": "15.5.4",
