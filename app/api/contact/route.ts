@@ -90,7 +90,7 @@ export async function POST(request: Request) {
 
   // Recorded on every path, including a failed send — a lead that could not be
   // emailed is exactly the one most worth keeping.
-  await recordLead({
+  const stored = await recordLead({
     name,
     email,
     business: business || "",
@@ -100,6 +100,23 @@ export async function POST(request: Request) {
     userAgent: request.headers.get("user-agent") ?? undefined,
     referer: request.headers.get("referer") ?? undefined,
   });
+
+  // Nothing held on to it: no email key, and the write failed — which is what
+  // a read-only filesystem such as Vercel's does. Telling the visitor it sent
+  // would lose them silently, so say so and give them the address instead.
+  if (!stored && emailStatus === "not_configured") {
+    console.error(
+      "[contact] enquiry could not be stored or emailed. Set RESEND_API_KEY, " +
+        "or move lib/leads.ts to a database.",
+    );
+    return NextResponse.json(
+      {
+        ok: false,
+        error: `That did not send. Please email ${to} directly.`,
+      },
+      { status: 503 },
+    );
+  }
 
   return response;
 }
