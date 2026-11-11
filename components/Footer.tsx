@@ -10,12 +10,28 @@ export default function Footer() {
 
         <nav className="flex flex-wrap gap-x-7 gap-y-2" aria-label="Footer">
           <a
-            href={site.links.fiverr}
+            href={site.links.whatsapp}
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm text-muted transition-colors duration-300 hover:text-bone"
           >
-            Fiverr
+            WhatsApp
+          </a>
+          <a
+            href={site.links.facebook}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-muted transition-colors duration-300 hover:text-bone"
+          >
+            Facebook
+          </a>
+          <a
+            href={site.links.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm text-muted transition-colors duration-300 hover:text-bone"
+          >
+            Instagram
           </a>
           <a
             href={site.links.linkedin}

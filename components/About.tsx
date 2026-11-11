@@ -37,12 +37,12 @@ export default function About() {
 
             <div className="mt-10 flex flex-wrap gap-4">
               <a
-                href={site.links.fiverr}
+                href={site.links.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full border border-ink-line px-6 py-3 text-sm font-semibold transition-colors duration-300 hover:border-bone/40 hover:bg-bone/5"
               >
-                Hire me on Fiverr
+                Message me on WhatsApp
               </a>
               <a
                 href={site.links.linkedin}

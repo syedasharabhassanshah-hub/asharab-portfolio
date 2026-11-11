@@ -14,6 +14,23 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "phs-scotland",
+    name: "Premier Home Solutions",
+    url: "https://phsscotland.com/",
+    domain: "phsscotland.com",
+    sector: "Home Protection & Property Maintenance",
+    headline: "Protect your home with professional solutions",
+    summary:
+      "A Glasgow trades business working across Scotland: wall and roof coating, painting, and chemical cleaning. Homeowners buying weatherproofing need proof before they need a price, so accreditation, warranties, and finished work lead the page.",
+    contributions: [
+      "Four service lines with plain-English explanations",
+      "Trust layer: Pro-Perla accreditation and warranty terms",
+      "Completed-project gallery and quote enquiry flow",
+    ],
+    stack: ["WordPress", "Service pages", "Responsive UI", "Lead capture"],
+    tint: ["#132B3A", "#37788C"],
+  },
+  {
     slug: "lifeline-med-care",
     name: "Life Line Med Care",
     url: "https://lifelinemedcarellc.com/",
@@ -80,23 +97,6 @@ export const projects: Project[] = [
     ],
     stack: ["WordPress", "WooCommerce", "Custom Layouts", "Speed Optimisation"],
     tint: ["#0B2E53", "#1E6FA8"],
-  },
-  {
-    slug: "phs-scotland",
-    name: "Premier Home Solutions",
-    url: "https://phsscotland.com/",
-    domain: "phsscotland.com",
-    sector: "Home Protection & Property Maintenance",
-    headline: "Protect your home with professional solutions",
-    summary:
-      "A Glasgow trades business working across Scotland: wall and roof coating, painting, and chemical cleaning. Homeowners buying weatherproofing need proof before they need a price, so accreditation, warranties, and finished work lead the page.",
-    contributions: [
-      "Four service lines with plain-English explanations",
-      "Trust layer: Pro-Perla accreditation and warranty terms",
-      "Completed-project gallery and quote enquiry flow",
-    ],
-    stack: ["WordPress", "Service pages", "Responsive UI", "Lead capture"],
-    tint: ["#132B3A", "#37788C"],
   },
   {
     slug: "quick-route",

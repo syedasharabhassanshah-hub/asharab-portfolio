@@ -1,6 +1,7 @@
 import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import Work from "@/components/Work";
+import Trades from "@/components/Trades";
 import Services from "@/components/Services";
 import Process from "@/components/Process";
 import Skills from "@/components/Skills";
@@ -19,7 +20,7 @@ const structuredData = {
   email: `mailto:${site.email}`,
   url: site.url,
   description: site.description,
-  sameAs: [site.links.fiverr, site.links.linkedin],
+  sameAs: [site.links.linkedin, site.links.facebook, site.links.instagram],
   knowsAbout: [
     "Web development",
     "WordPress",
@@ -49,6 +50,7 @@ export default function Home() {
       <main>
         <Hero />
         <Work />
+        <Trades />
         <Services />
         <Process />
         <Skills />

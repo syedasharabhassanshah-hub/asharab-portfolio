@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stonegate Builders | Builders in Bristol (example design)</title>
+<meta name="description" content="Example website design for a builders business, by Asharab Hassan.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f5f0e8;--surface:#fffdf9;--line:#e0d6c6;--text:#26221d;--muted:#6f665a;--accent:#b4532a;--on-accent:#ffffff;--band:#26221d;--on-band:#f5f0e8;--r:2px;--display:'Fraunces', serif;--body:'Inter', sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+h1,h2,h3{font-family:var(--display);line-height:1.05;letter-spacing:-.02em;text-wrap:balance}
+h1{font-size:clamp(2.3rem,6vw,4.4rem);font-weight:800}
+h1 em{font-style:normal;color:var(--accent)}
+h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700}
+h3{font-size:1.2rem;font-weight:700}
+.small{font-size:.875rem;color:var(--muted)}
+.demo{background:#111;color:#fff;font:500 13px/1.4 system-ui,sans-serif;padding:9px 20px;text-align:center}
+.demo a{color:#ffd23f;font-weight:700;white-space:nowrap}
+header{border-bottom:1px solid var(--line);background:var(--surface);position:sticky;top:0;z-index:5}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
+.logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:800;font-size:1.15rem;text-decoration:none}
+.logo span{display:grid;place-items:center;width:38px;height:38px;border-radius:var(--r);background:var(--accent);color:var(--on-accent);font-size:1.25rem}
+nav{display:flex;gap:26px;font-size:.95rem}
+nav a{text-decoration:none;color:var(--muted)}
+nav a:hover{color:var(--text)}
+.btn{display:inline-block;background:var(--accent);color:var(--on-accent);font-weight:700;font-family:var(--body);font-size:1rem;padding:14px 24px;border-radius:var(--r);border:2px solid var(--accent);text-decoration:none;cursor:pointer}
+.btn.ghost{background:transparent;color:var(--text);border-color:var(--line)}
+.btn.sm{padding:9px 16px;font-size:.9rem}
+.kicker{font-size:.85rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.lead{font-size:1.15rem;color:var(--muted);max-width:36em;margin-top:22px}
+.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.hero{padding-top:64px;padding-bottom:72px}
+.hero.split{display:grid;grid-template-columns:1.25fr .9fr;gap:56px;align-items:center}
+.hero.centre{text-align:center}
+.hero.centre .lead{margin-left:auto;margin-right:auto}
+.hero.centre .cta,.hero.centre .stats{justify-content:center}
+.hero.editorial{display:grid;grid-template-columns:1.6fr .8fr;gap:64px;align-items:end}
+.hero.editorial h1{font-weight:600;font-size:clamp(2.5rem,6.4vw,5rem)}
+.hero.editorial h1 em{font-style:italic}
+.hero.editorial aside{border-left:1px solid var(--line);padding-left:32px}
+.hero.editorial aside .stats{flex-direction:column;gap:22px;margin:0 0 24px}
+.alert{display:inline-block;background:var(--band);color:var(--on-band);font-weight:600;font-size:.95rem;padding:9px 20px;border-radius:999px;margin-bottom:28px}
+.stats{display:flex;flex-wrap:wrap;gap:36px;margin-top:44px}
+.stats strong{display:block;font-family:var(--display);font-size:1.9rem;line-height:1.1}
+.stats span{font-size:.875rem;color:var(--muted)}
+.quote{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px;display:grid;gap:14px}
+.quote label{display:grid;gap:6px;font-size:.85rem;font-weight:600}
+.quote input,.quote select{font:inherit;font-weight:400;padding:12px;border:1px solid var(--line);border-radius:var(--r);background:var(--bg);color:var(--text);width:100%}
+.band{background:var(--band);color:var(--on-band)}
+.band ul{list-style:none;padding:20px;display:flex;flex-wrap:wrap;justify-content:center;gap:10px 40px;font-weight:600;font-size:.95rem;max-width:1160px;margin:0 auto}
+.band li::before{content:"✓ "}
+section.block{padding-block:84px}
+.head{max-width:40em;margin-bottom:44px}
+.head p{color:var(--muted);margin-top:14px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+.card p{color:var(--muted);font-size:.95rem;margin-top:10px}
+.card .n{font-family:var(--display);font-weight:700;color:var(--accent);font-size:.9rem;margin-bottom:14px}
+.work{grid-template-columns:repeat(4,1fr)}
+.job{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--surface)}
+.job .art{aspect-ratio:4/3;background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 80%,#000),color-mix(in srgb,var(--band) 70%,var(--accent)));position:relative}
+.job .art::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent 0 22px,rgba(255,255,255,.09) 22px 23px)}
+.job .art b{position:absolute;left:14px;bottom:12px;z-index:1;color:#fff;font-family:var(--display);font-size:1.25rem}
+.job div.t{padding:16px}
+.job div.t p{font-size:.9rem;color:var(--muted)}
+.job div.t span{font-size:.8rem;font-weight:600;color:var(--accent)}
+.alt{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+blockquote{font-size:1.02rem}
+.card cite{display:block;margin-top:16px;font-style:normal;font-weight:600;font-size:.9rem}
+.card cite span{font-weight:400;color:var(--muted)}
+.stars{color:var(--accent);letter-spacing:2px;margin-bottom:12px}
+.areas{display:flex;flex-wrap:wrap;gap:10px}
+.areas span{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:8px 16px;font-size:.92rem}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+footer{background:var(--band);color:var(--on-band);padding:44px 0;font-size:.92rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
+footer a{font-weight:700}
+@media(max-width:900px){nav{display:none}.hero.split,.hero.editorial,.two{grid-template-columns:1fr;gap:36px}.hero.editorial aside{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:28px}.hero.editorial aside .stats{flex-direction:row}.grid{grid-template-columns:1fr}.work{grid-template-columns:1fr 1fr}.hero{padding-top:44px;padding-bottom:52px}section.block{padding-block:60px}.stats{gap:24px}}
+@media(max-width:480px){header .btn{display:none}.work{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="demo">Example design for a fictional business, not a real company. <a href="/#trades">Websites for UK trades by Asharab Hassan &rarr;</a></div>
+<header><div class="wrap">
+  <a class="logo" href="#"><span>S</span>Stonegate Builders</a>
+  <nav><a href="#services">Services</a><a href="#work">Recent work</a><a href="#reviews">Reviews</a><a href="#areas">Areas</a></nav>
+  <a class="btn sm" href="tel:01174960155">0117 496 0155</a>
+</div></header>
+<main>
+<section class="hero editorial wrap"><div><p class="kicker">Extensions · Lofts · Renovations · Bristol &amp; Bath</p>
+      <h1>Extensions and renovations built to <em>last a lifetime.</em></h1>
+      <p class="lead">A small, careful building team that takes on a handful of projects a year. One site manager from first drawing to final snag, and a written schedule you can hold us to.</p>
+      <div class="cta"><a class="btn" href="#quote">Get a free quote</a><a class="btn ghost" href="tel:01174960155">Call 0117 496 0155</a></div></div><aside><div class="stats"><div><strong>140+</strong><span>projects completed</span></div><div><strong>4.9★</strong><span>from 58 Google reviews</span></div><div><strong>10 yr</strong><span>structural guarantee</span></div></div><p class="small">Now booking projects for spring. Site visits are free and there is never any pressure.</p></aside></section>
+<div class="band"><ul><li>Federation of Master Builders</li><li>TrustMark registered</li><li>£10m public liability</li><li>10-year structural guarantee</li></ul></div>
+<section class="block wrap" id="services">
+  <div class="head"><h2>What we do</h2><p>Clear prices, tidy work and a proper guarantee on every job, large or small.</p></div>
+  <div class="grid"><div class="card"><p class="n">01</p><h3>House extensions</h3><p>Single and double storey extensions, from planning drawings to decoration.</p></div><div class="card"><p class="n">02</p><h3>Loft conversions</h3><p>Dormer, hip-to-gable and Velux conversions with building control sign-off.</p></div><div class="card"><p class="n">03</p><h3>Full renovations</h3><p>Whole-house refurbishment, managed as one project with one point of contact.</p></div><div class="card"><p class="n">04</p><h3>Kitchens and knock-throughs</h3><p>Structural openings, steelwork and fitted kitchens.</p></div><div class="card"><p class="n">05</p><h3>Brickwork and repointing</h3><p>Period brick and stone repaired to match the original.</p></div><div class="card"><p class="n">06</p><h3>Garden rooms and garages</h3><p>Insulated outbuildings and garage conversions.</p></div></div>
+</section>
+<section class="block alt" id="work"><div class="wrap">
+  <div class="head"><h2>Recent work</h2><p>A few of the jobs we have finished around Bristol lately. Your own photos go here.</p></div>
+  <div class="grid work"><div class="job"><div class="art"><b>Rear extension</b></div><div class="t"><p>Victorian terrace, Bishopston</p><span>Completed in 14 weeks</span></div></div><div class="job"><div class="art"><b>Loft conversion</b></div><div class="t"><p>Dormer with ensuite, Redland</p><span>Completed in 9 weeks</span></div></div><div class="job"><div class="art"><b>Full renovation</b></div><div class="t"><p>Four-bed semi, Clifton</p><span>Completed in 6 months</span></div></div><div class="job"><div class="art"><b>Kitchen knock-through</b></div><div class="t"><p>Open-plan living, Southville</p><span>Completed in 5 weeks</span></div></div></div>
+</div></section>
+<section class="block wrap" id="reviews">
+  <div class="head"><h2>What customers say</h2><p>Pulled straight from your Google reviews, so new customers see them before they call.</p></div>
+  <div class="grid"><div class="card"><div class="stars">★★★★★</div><blockquote>&ldquo;They finished a week early and the final bill matched the quote to the pound. We did not think that was possible.&rdquo;</blockquote><cite>Helen &amp; Mark D. <span>· Bishopston</span></cite></div><div class="card"><div class="stars">★★★★★</div><blockquote>&ldquo;Tidy, polite and proud of their work. Our neighbours have since hired them too.&rdquo;</blockquote><cite>Priya S. <span>· Redland</span></cite></div><div class="card"><div class="stars">★★★★★</div><blockquote>&ldquo;A weekly update every Friday meant we always knew where things stood. Superb finish.&rdquo;</blockquote><cite>Andrew B. <span>· Clifton</span></cite></div></div>
+</section>
+<section class="block alt" id="areas"><div class="wrap two">
+  <div><div class="head"><h2>Areas we cover</h2><p>Based in Bristol and working within about ten miles.</p></div><div class="areas"><span>Bristol</span><span>Clifton</span><span>Redland</span><span>Bishopston</span><span>Southville</span><span>Bedminster</span><span>Westbury-on-Trym</span><span>Keynsham</span><span>Bath</span><span>Portishead</span></div></div>
+  <div id="quote"><form class="quote" onsubmit="event.preventDefault();this.querySelector('.sent').hidden=false">
+    <h3>Get a free quote</h3>
+    <p class="small">Tell us about the job and we will call you back the same day.</p>
+    <label>Your name<input type="text" placeholder="Jane Cooper"></label>
+    <label>Phone<input type="tel" placeholder="07..."></label>
+    <label>What do you need?<select><option>Extension</option><option>Loft conversion</option><option>Full renovation</option><option>Kitchen or knock-through</option><option>Brickwork</option><option>Something else</option></select></label>
+    <label>Postcode<input type="text" placeholder="e.g. BS7"></label>
+    <button class="btn" type="submit">Request my quote</button>
+    <p class="sent small" hidden>This is an example design, so nothing was sent.</p>
+  </form></div>
+</div></section>
+</main>
+<footer><div class="wrap"><div><strong>Stonegate Builders</strong><br>Builders in Bristol</div><div>Call <a href="tel:01174960155">0117 496 0155</a><br>Mon to Sat, 7am to 6pm</div><div>Example design by <a href="/#trades">Asharab Hassan</a></div></div></footer>
+</body>
+</html>

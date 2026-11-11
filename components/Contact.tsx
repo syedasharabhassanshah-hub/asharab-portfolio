@@ -80,9 +80,19 @@ export default function Contact() {
                   href: `mailto:${site.email}`,
                 },
                 {
-                  label: "Fiverr",
-                  value: "asharabhassa279",
-                  href: site.links.fiverr,
+                  label: "WhatsApp",
+                  value: site.whatsappDisplay,
+                  href: site.links.whatsapp,
+                },
+                {
+                  label: "Facebook",
+                  value: "Asharab Hassan",
+                  href: site.links.facebook,
+                },
+                {
+                  label: "Instagram",
+                  value: "@hassan891989",
+                  href: site.links.instagram,
                 },
                 {
                   label: "LinkedIn",
