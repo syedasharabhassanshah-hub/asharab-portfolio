@@ -47,6 +47,20 @@ const examples: Example[] = [
     swatch: ["#ece3da", "#b5806b"],
   },
   {
+    slug: "tiler",
+    trade: "Tiler",
+    name: "Kiln & Level Tiling",
+    town: "Manchester",
+    idea: "Lets the customer lay out their own wall, then counts the tiles for them.",
+    points: [
+      "Pattern lab: five layouts, six colours, three grouts",
+      "Tile calculator that allows for cuts",
+      "The six layers under a floor that lasts",
+    ],
+    height: 3577,
+    swatch: ["#0f6b55", "#e3ab2f"],
+  },
+  {
     slug: "plumber",
     trade: "Plumbing & heating",
     name: "Harbour Plumbing & Heating",
@@ -103,7 +117,7 @@ export default function Showcase() {
       <div className="mx-auto max-w-[86rem] px-6 lg:px-10">
         <div className="flex flex-wrap items-end justify-between gap-6">
           <div className="max-w-2xl">
-            <h2 className="type-section">Five trades, five different sites</h2>
+            <h2 className="type-section">Six trades, six different sites</h2>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-muted">
               No template with the colours swapped. Each example below was
               designed around how that trade actually wins work. They are for
