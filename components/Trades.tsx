@@ -1,6 +1,4 @@
 import { site } from "@/lib/site";
-import SiteShot from "@/components/ui/SiteShot";
-import BrowserFrame from "@/components/ui/BrowserFrame";
 import Reveal from "@/components/ui/Reveal";
 
 const packages = [
@@ -34,41 +32,16 @@ const packages = [
   },
 ];
 
-const examples = [
-  {
-    slug: "example-electrician",
-    href: "/examples/electrician.html",
-    trade: "Electrician",
-    name: "Brightwell Electrical",
-    tint: ["#0b1626", "#ffd23f"] as [string, string],
-  },
-  {
-    slug: "example-plumber",
-    href: "/examples/plumber.html",
-    trade: "Plumbing & heating",
-    name: "Harbour Plumbing & Heating",
-    tint: ["#0e6b7c", "#ff6b4a"] as [string, string],
-  },
-  {
-    slug: "example-builder",
-    href: "/examples/builder.html",
-    trade: "Builder",
-    name: "Stonegate Builders",
-    tint: ["#26221d", "#b4532a"] as [string, string],
-  },
-];
-
 export default function Trades() {
   return (
     <section
       id="trades"
-      className="relative border-y border-ink-line bg-ink-raised/60 py-24 sm:py-32"
+      className="relative border-y border-ink-line bg-ink-raised/60 py-20 sm:py-28"
     >
       <div className="mx-auto max-w-[86rem] px-6 lg:px-10">
         <div className="max-w-3xl">
-          <p className="text-xs text-signal">For UK trades</p>
-          <h2 className="type-section mt-3">
-            A website that gets your phone ringing
+          <h2 className="type-section">
+            Two fixed prices, nothing to pay up front
           </h2>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-muted">
             Electricians, plumbers, builders, roofers, joiners and decorators.
@@ -134,56 +107,6 @@ export default function Trades() {
           </p>
         </div>
 
-        <div className="mt-24">
-          <h3 className="font-display text-2xl font-semibold tracking-tight sm:text-3xl">
-            Example designs for trades
-          </h3>
-          <p className="mt-4 max-w-xl text-[0.95rem] leading-relaxed text-muted">
-            These three are design examples for made-up businesses, to show
-            what a trade site from me looks like. Open any of them and click
-            around. For real client work, see{" "}
-            <a
-              href="#work"
-              className="text-bone underline decoration-signal/40 underline-offset-4 hover:decoration-signal"
-            >
-              the sites above
-            </a>
-            .
-          </p>
-
-          <div className="mt-10 grid gap-8 md:grid-cols-3">
-            {examples.map((example, index) => (
-              <Reveal key={example.slug} delay={index * 80}>
-                <a
-                  href={example.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  aria-label={`Open the ${example.name} example design in a new tab`}
-                  className="group block"
-                >
-                  <BrowserFrame
-                    domain="example design"
-                    className="transition-transform duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:-translate-y-1.5"
-                  >
-                    <SiteShot
-                      slug={example.slug}
-                      name={`${example.name} example`}
-                      tint={example.tint}
-                      sizes="(max-width: 768px) 92vw, 30vw"
-                    />
-                  </BrowserFrame>
-                  <p className="mt-5 text-xs text-signal">{example.trade}</p>
-                  <p className="mt-1.5 font-display text-lg font-semibold tracking-tight text-bone">
-                    {example.name}
-                    <span className="ml-2 text-sm font-normal text-muted">
-                      example
-                    </span>
-                  </p>
-                </a>
-              </Reveal>
-            ))}
-          </div>
-        </div>
       </div>
     </section>
   );

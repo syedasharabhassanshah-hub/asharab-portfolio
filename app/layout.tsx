@@ -71,10 +71,10 @@ export default function RootLayout({
     >
       <body className="grain antialiased" suppressHydrationWarning>
         <a
-          href="#work"
+          href="#examples"
           className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-signal focus:px-5 focus:py-2.5 focus:text-sm focus:font-semibold focus:text-ink"
         >
-          Skip to the work
+          Skip to the examples
         </a>
         {children}
       </body>

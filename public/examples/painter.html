@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Alder &amp; Lime Decorators | York (example design)</title>
+<meta name="description" content="Example website design for a painter and decorator, by Asharab Hassan. Alder & Lime is a fictional business.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..600&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--plaster:#efe2d6;--chalk:#faf5ee;--ink:#2a2230;--sage:#7d8d76;--ochre:#c2913d;--damson:#5b3a4e;--rule:rgba(42,34,48,.18)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:"Figtree",system-ui,sans-serif;background:var(--chalk);color:var(--ink);line-height:1.65;-webkit-font-smoothing:antialiased}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit}
+.wrap{width:min(1180px,100% - 44px);margin-inline:auto}
+.serif{font-family:"Bodoni Moda",Georgia,serif;font-weight:400;letter-spacing:-.02em;line-height:1.02}
+:focus-visible{outline:2px solid var(--damson);outline-offset:4px}
+.demo{background:var(--ink);color:var(--plaster);font-size:.8rem;text-align:center;padding:8px 16px}
+.demo a{color:#e9c98b;font-weight:600}
+
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:26px 0}
+.logo{font-family:"Bodoni Moda",serif;font-size:1.55rem;text-decoration:none;letter-spacing:-.02em}
+.logo i{color:var(--sage)}
+nav{display:flex;gap:30px;font-size:.95rem}
+nav a{text-decoration:none;padding-bottom:3px;border-bottom:1px solid transparent}
+nav a:hover{border-color:var(--ink)}
+.btn{font:inherit;font-weight:600;cursor:pointer;background:var(--ink);color:var(--chalk);border:0;padding:14px 26px;border-radius:999px;text-decoration:none;display:inline-block}
+.btn.line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+
+.hero .wrap{display:grid;grid-template-columns:1fr 1.05fr;gap:56px;align-items:center;padding:34px 0 0}
+.hero h1{font-size:clamp(3.2rem,7.4vw,6.6rem)}
+.hero h1 em{font-style:italic}
+.hero p{font-size:1.15rem;max-width:40ch;margin:28px 0 34px;color:#4b4252}
+.hero .row{display:flex;gap:12px;flex-wrap:wrap}
+.frame{position:relative}
+.frame .ph{aspect-ratio:4/5;border-radius:240px 240px 6px 6px;overflow:hidden}
+.seal{position:absolute;right:-18px;bottom:44px;width:150px;height:150px;border-radius:50%;background:var(--damson);color:var(--chalk);display:grid;place-content:center;text-align:center;font-size:.85rem;line-height:1.25}
+.seal b{display:block;font-family:"Bodoni Moda",serif;font-weight:500;font-size:2.7rem;line-height:1}
+
+.chips{padding:74px 0 0}
+.chips p.intro{max-width:46ch;color:#4b4252}
+.chiprow{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:28px}
+.chip{background:#fff;padding:10px 10px 16px;box-shadow:0 1px 0 rgba(42,34,48,.08),0 14px 30px -18px rgba(42,34,48,.4);cursor:pointer;border:0;font:inherit;color:inherit;text-align:left;transition:transform .25s}
+.chip:hover,.chip[aria-pressed=true]{transform:translateY(-8px) rotate(-1.2deg)}
+.chip span{display:block;aspect-ratio:1/1.05;margin-bottom:12px}
+.chip b{display:block;font-family:"Bodoni Moda",serif;font-weight:500;font-size:1.15rem}
+.chip small{color:#6b6272}
+.said{margin-top:26px;font-family:"Bodoni Moda",serif;font-style:italic;font-size:1.35rem;min-height:2.2em;max-width:44ch}
+
+section{padding:104px 0}
+h2.serif{font-size:clamp(2.3rem,4.8vw,4rem);max-width:17ch}
+.lede{max-width:50ch;margin-top:18px;color:#4b4252;font-size:1.08rem}
+
+.ba{background:var(--plaster)}
+.ba .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:center}
+.slider{position:relative;aspect-ratio:3/2;border-radius:6px;overflow:hidden;--p:50%;user-select:none}
+.slider .before{position:absolute;inset:0;clip-path:inset(0 calc(100% - var(--p)) 0 0)}
+.slider .before img{filter:grayscale(.85) sepia(.35) brightness(.82) contrast(.86)}
+.slider .handle{position:absolute;top:0;bottom:0;left:var(--p);width:2px;background:var(--chalk);transform:translateX(-1px);pointer-events:none}
+.slider .handle::after{content:"";position:absolute;top:50%;left:50%;width:46px;height:46px;border-radius:50%;background:var(--chalk);transform:translate(-50%,-50%);box-shadow:0 4px 18px rgba(0,0,0,.3);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 46 46'%3E%3Cpath d='M19 16l-7 7 7 7M27 16l7 7-7 7' fill='none' stroke='%232a2230' stroke-width='2'/%3E%3C/svg%3E")}
+.slider input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.slider .tag{position:absolute;bottom:14px;background:rgba(250,245,238,.92);padding:5px 12px;border-radius:999px;font-size:.82rem;font-weight:600}
+.tag.l{left:14px}.tag.r{right:14px}
+.facts{list-style:none;padding:0;margin-top:30px;border-top:1px solid var(--rule)}
+.facts li{display:flex;justify-content:space-between;gap:20px;padding:13px 0;border-bottom:1px solid var(--rule);font-size:.98rem}
+.facts li span:first-child{color:#6b6272}
+
+.kinds{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:56px}
+.kind .ph{aspect-ratio:4/5;overflow:hidden;border-radius:4px}
+.kind:nth-child(2){margin-top:64px}
+.kind h3{font-family:"Bodoni Moda",serif;font-weight:500;font-size:1.9rem;margin:22px 0 8px}
+.kind p{color:#4b4252}
+.kind ul{list-style:none;padding:0;margin-top:14px;font-size:.95rem}
+.kind li{padding:7px 0;border-top:1px solid var(--rule)}
+
+.pledge{background:var(--damson);color:var(--chalk)}
+.pledge .wrap{display:grid;grid-template-columns:auto 1fr;gap:60px;align-items:center}
+.pledge .num{font-family:"Bodoni Moda",serif;font-size:clamp(8rem,18vw,15rem);line-height:.8;font-style:italic}
+.pledge h2{color:var(--chalk)}
+.pledge p{max-width:52ch;margin-top:18px;color:#e6d9e0;font-size:1.08rem}
+.pledge ol{margin:26px 0 0;padding-left:1.2em;display:grid;gap:8px;color:#e6d9e0}
+
+.voices{display:grid;grid-template-columns:1.2fr .8fr;gap:60px;align-items:start}
+.voices blockquote{font-family:"Bodoni Moda",serif;font-size:clamp(1.6rem,3.1vw,2.5rem);line-height:1.2}
+.voices cite{display:block;font:500 1rem "Figtree",sans-serif;margin-top:22px;color:#4b4252}
+.aside{border-left:1px solid var(--rule);padding-left:34px;display:grid;gap:26px}
+.aside p{font-size:1rem}
+.aside small{display:block;color:#6b6272;margin-top:6px}
+
+.est{background:var(--plaster)}
+.est .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+.est form{display:grid;gap:14px}
+.est label{font-size:.9rem;font-weight:600}
+.est input,.est select,.est textarea{font:inherit;width:100%;margin-top:6px;padding:14px 0;border:0;border-bottom:1.5px solid var(--ink);background:transparent;color:var(--ink);border-radius:0}
+.est textarea{min-height:84px;resize:vertical}
+.note{display:none;font-size:.92rem;color:var(--damson);font-weight:600}
+.tel{font-family:"Bodoni Moda",serif;font-size:2.4rem;text-decoration:none;display:inline-block;margin-top:22px}
+.foot{padding:30px 0;font-size:.88rem;color:#6b6272;border-top:1px solid var(--rule)}
+.foot .wrap{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between}
+
+@media(max-width:920px){
+  nav{display:none}
+  .hero .wrap,.ba .wrap,.pledge .wrap,.voices,.est .wrap{grid-template-columns:1fr;gap:40px}
+  .frame{max-width:440px}.seal{right:0}
+  .chiprow{grid-template-columns:repeat(5,minmax(132px,1fr));overflow-x:auto;padding:12px 4px 22px;margin-inline:-4px}
+  .kinds{grid-template-columns:1fr}.kind:nth-child(2){margin-top:0}
+  .aside{border-left:0;padding-left:0;border-top:1px solid var(--rule);padding-top:28px}
+  section{padding:72px 0}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.chip{transition:none}}
+</style>
+</head>
+<body>
+<div class="demo">Example design for a fictional business, not a real company. <a href="/#trades">Websites for UK trades by Asharab Hassan</a></div>
+
+<header><div class="wrap">
+  <a class="logo" href="#top">Alder <i>&amp;</i> Lime</a>
+  <nav aria-label="Main"><a href="#colours">Colours</a><a href="#before">Before and after</a><a href="#work">What we paint</a><a href="#pledge">Guarantee</a></nav>
+  <a class="btn" href="#estimate">Free estimate</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap">
+  <div>
+    <h1 class="serif">Rooms you won&rsquo;t want to leave.</h1>
+    <p>Painters and decorators in York. Careful preparation, proper paint and dust sheets on everything. We arrive at eight and we&rsquo;re gone by five.</p>
+    <div class="row"><a class="btn" href="#estimate">Ask for an estimate</a><a class="btn line" href="#before">See a before and after</a></div>
+  </div>
+  <div class="frame">
+    <div class="ph"><img src="https://images.unsplash.com/photo-1631509824910-82791a0e43d1?auto=format&fit=crop&w=1100&q=72" alt="A sitting room with a green armchair against a freshly painted wall"></div>
+    <div class="seal"><span><b>5</b>year written<br>guarantee</span></div>
+  </div>
+</div></div>
+
+<div class="chips" id="colours"><div class="wrap">
+  <p class="intro">Five colours we used most this year. Pick one and hear what a customer said about it.</p>
+  <div class="chiprow">
+    <button class="chip" aria-pressed="true" data-q="&ldquo;It changes all day. Grey at breakfast, almost green by tea time.&rdquo; Sitting room, Bishopthorpe"><span style="background:#8b9a83"></span><b>Ings Green</b><small>No. 14, soft sheen</small></button>
+    <button class="chip" aria-pressed="false" data-q="&ldquo;Warm without being pink. The whole hall feels wider.&rdquo; Hallway, Fulford"><span style="background:#e6d2c3"></span><b>Minster Stone</b><small>No. 03, dead flat</small></button>
+    <button class="chip" aria-pressed="false" data-q="&ldquo;We were nervous about going dark. Now it&rsquo;s everyone&rsquo;s favourite room.&rdquo; Snug, Heworth"><span style="background:#5b3a4e"></span><b>Damson Lane</b><small>No. 27, eggshell</small></button>
+    <button class="chip" aria-pressed="false" data-q="&ldquo;Like sunshine on the front door, even in February.&rdquo; Front door, Acomb"><span style="background:#c2913d"></span><b>Shambles Ochre</b><small>No. 19, exterior gloss</small></button>
+    <button class="chip" aria-pressed="false" data-q="&ldquo;Crisp, but not the cold white we had before.&rdquo; Kitchen, Dringhouses"><span style="background:#f4eee4;box-shadow:inset 0 0 0 1px rgba(42,34,48,.12)"></span><b>Ouse Chalk</b><small>No. 01, kitchen matt</small></button>
+  </div>
+  <p class="said" id="said" aria-live="polite"></p>
+</div></div>
+
+<section class="ba" id="before"><div class="wrap">
+  <div>
+    <h2 class="serif">Drag to see what three days can do</h2>
+    <p class="lede">A tired, yellowing sitting room in Bishopthorpe. Cracks raked out and filled, woodwork sanded back, two full coats everywhere.</p>
+    <ul class="facts"><li><span>Time on site</span><span>3 days</span></li><li><span>Walls</span><span>Ouse Chalk, dead flat</span></li><li><span>Woodwork</span><span>Ouse Chalk, eggshell</span></li><li><span>Furniture moved and covered</span><span>All of it, by us</span></li></ul>
+  </div>
+  <div class="slider" id="slider">
+    <img loading="lazy" src="https://images.unsplash.com/photo-1648475237029-7f853809ca14?auto=format&fit=crop&w=1300&q=72" alt="The finished sitting room after painting">
+    <div class="before"><img loading="lazy" src="https://images.unsplash.com/photo-1648475237029-7f853809ca14?auto=format&fit=crop&w=1300&q=72" alt=""></div>
+    <div class="handle"></div>
+    <span class="tag l">Before</span><span class="tag r">After</span>
+    <input type="range" min="0" max="100" value="50" aria-label="Drag to compare before and after">
+  </div>
+</div></section>
+
+<section id="work"><div class="wrap">
+  <h2 class="serif">Inside, outside and the tricky bits</h2>
+  <div class="kinds">
+    <div class="kind"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1633505412556-82c0921e8f4a?auto=format&fit=crop&w=800&q=72" alt="A dining room by a window with painted walls"></div><h3>Interiors</h3><p>Whole houses or a single ceiling. We fill, sand and prime before a drop of colour goes on.</p><ul><li>Walls, ceilings and woodwork</li><li>Wallpaper hanging and stripping</li><li>Kitchen cabinet respraying</li></ul></div>
+    <div class="kind"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1688372199140-cade7ae820fe?auto=format&fit=crop&w=800&q=72" alt="A decorator painting a wall with a roller"></div><h3>Exteriors</h3><p>Masonry, sash windows and front doors, done in the right weather with paint that lasts.</p><ul><li>Render and masonry</li><li>Sash windows and sills</li><li>Front doors, hand finished</li></ul></div>
+    <div class="kind"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1562259949-e8e7689d7828?auto=format&fit=crop&w=800&q=72" alt="A roller laying blue paint onto a white wall"></div><h3>Specialist finishes</h3><p>For period homes and anyone who wants something a tin of magnolia can&rsquo;t do.</p><ul><li>Limewash and distemper</li><li>Heritage colour matching</li><li>Panelling and colour drenching</li></ul></div>
+  </div>
+</div></section>
+
+<section class="pledge" id="pledge"><div class="wrap">
+  <div class="num serif" aria-hidden="true">5</div>
+  <div>
+    <h2 class="serif">Years. In writing, with your invoice.</h2>
+    <p>If our paint peels, flakes or blisters within five years, we come back and put it right at no cost. Three things make that possible:</p>
+    <ol><li>We only use trade paint from makers we trust.</li><li>We never skip preparation to save a day.</li><li>The person who quotes your job is the person who paints it.</li></ol>
+  </div>
+</div></section>
+
+<section><div class="wrap voices">
+  <div>
+    <blockquote>&ldquo;They left the house cleaner than they found it. I have never said that about a tradesman before.&rdquo;</blockquote>
+    <cite>Helen W., whole house repaint, Fulford</cite>
+  </div>
+  <div class="aside">
+    <p>&ldquo;The estimate was the final bill, to the pound.&rdquo;<small>James A., Heworth</small></p>
+    <p>&ldquo;Our sash windows open for the first time in ten years.&rdquo;<small>Ruth and Sam, The Mount</small></p>
+    <p><strong>4.9 from 73 Google reviews</strong><small>Dulux Select Decorator, City &amp; Guilds qualified</small></p>
+  </div>
+</div></section>
+
+<section class="est" id="estimate"><div class="wrap">
+  <div>
+    <h2 class="serif">Tell us about the room</h2>
+    <p class="lede">We&rsquo;ll visit, measure and send a written estimate within two days. No deposit until the day we start.</p>
+    <a class="tel" href="tel:01904960117">01904 960117</a>
+  </div>
+  <form data-demo>
+    <label>Your name<input required></label>
+    <label>Phone or email<input required></label>
+    <label>What needs painting?<select><option>A room or two</option><option>The whole house</option><option>The outside</option><option>Kitchen cabinets</option><option>Something else</option></select></label>
+    <label>Anything we should know?<textarea></textarea></label>
+    <button class="btn" style="justify-self:start">Send my request</button>
+    <p class="note" role="status">This is an example design, so nothing was sent. On your site this arrives in your inbox and on your phone.</p>
+  </form>
+</div></section>
+</main>
+
+<div class="foot"><div class="wrap"><span>Alder &amp; Lime Decorators, York. Example design, not a real company.</span><span>Design by <a href="/#trades">Asharab Hassan</a>. Photos from Unsplash. The &ldquo;before&rdquo; view is simulated.</span></div></div>
+
+<script>
+document.querySelectorAll('form[data-demo]').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();f.querySelector('.note').style.display='block'}));
+(()=>{const said=document.getElementById('said'),chips=[...document.querySelectorAll('.chip')];
+const set=c=>{chips.forEach(x=>x.setAttribute('aria-pressed',x===c));said.innerHTML=c.dataset.q};
+chips.forEach(c=>c.addEventListener('click',()=>set(c)));set(chips[0]);
+const s=document.getElementById('slider');s.querySelector('input').addEventListener('input',e=>s.style.setProperty('--p',e.target.value+'%'));})();
+</script>
+</body>
+</html>

@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 import { site } from "@/lib/site";
 
 const links = [
-  { href: "#work", label: "Work" },
-  { href: "#trades", label: "For trades" },
-  { href: "#services", label: "Services" },
+  { href: "#examples", label: "Examples" },
+  { href: "#trades", label: "Prices" },
+  { href: "#work", label: "Client sites" },
   { href: "#process", label: "Process" },
   { href: "#about", label: "About" },
 ];

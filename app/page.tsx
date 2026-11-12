@@ -2,6 +2,8 @@ import Nav from "@/components/Nav";
 import Hero from "@/components/Hero";
 import Work from "@/components/Work";
 import Trades from "@/components/Trades";
+import Showcase from "@/components/Showcase";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import Services from "@/components/Services";
 import Process from "@/components/Process";
 import Skills from "@/components/Skills";
@@ -49,8 +51,9 @@ export default function Home() {
       <Nav />
       <main>
         <Hero />
-        <Work />
+        <Showcase />
         <Trades />
+        <Work />
         <Services />
         <Process />
         <Skills />
@@ -58,6 +61,7 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <WhatsAppButton />
     </>
   );
 }

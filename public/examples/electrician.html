@@ -4,137 +4,247 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Brightwell Electrical | Electricians in Stockport (example design)</title>
-<meta name="description" content="Example website design for a electricians business, by Asharab Hassan.">
+<meta name="description" content="Example website design for an electrician, by Asharab Hassan. Brightwell Electrical is a fictional business.">
 <meta name="robots" content="noindex">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#0b1626;--surface:#12213a;--line:#223555;--text:#eef3fb;--muted:#93a4c0;--accent:#ffd23f;--on-accent:#0b1626;--band:#ffd23f;--on-band:#0b1626;--r:6px;--display:'Archivo', sans-serif;--body:'Archivo', sans-serif}
+:root{--y:#ffd60a;--k:#111210;--w:#fffdf5;--g:#2b2c28;--soft:#f4efdc;--line:rgba(17,18,16,.16)}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body{font-family:"Archivo",system-ui,sans-serif;background:var(--w);color:var(--k);line-height:1.55;-webkit-font-smoothing:antialiased}
+img{display:block;width:100%;height:100%;object-fit:cover}
 a{color:inherit}
-.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
-h1,h2,h3{font-family:var(--display);line-height:1.05;letter-spacing:-.02em;text-wrap:balance}
-h1{font-size:clamp(2.3rem,6vw,4.4rem);font-weight:800}
-h1 em{font-style:normal;color:var(--accent)}
-h2{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700}
-h3{font-size:1.2rem;font-weight:700}
-.small{font-size:.875rem;color:var(--muted)}
-.demo{background:#111;color:#fff;font:500 13px/1.4 system-ui,sans-serif;padding:9px 20px;text-align:center}
-.demo a{color:#ffd23f;font-weight:700;white-space:nowrap}
-header{border-bottom:1px solid var(--line);background:var(--surface);position:sticky;top:0;z-index:5}
-header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:72px}
-.logo{display:flex;align-items:center;gap:10px;font-family:var(--display);font-weight:800;font-size:1.15rem;text-decoration:none}
-.logo span{display:grid;place-items:center;width:38px;height:38px;border-radius:var(--r);background:var(--accent);color:var(--on-accent);font-size:1.25rem}
-nav{display:flex;gap:26px;font-size:.95rem}
-nav a{text-decoration:none;color:var(--muted)}
-nav a:hover{color:var(--text)}
-.btn{display:inline-block;background:var(--accent);color:var(--on-accent);font-weight:700;font-family:var(--body);font-size:1rem;padding:14px 24px;border-radius:var(--r);border:2px solid var(--accent);text-decoration:none;cursor:pointer}
-.btn.ghost{background:transparent;color:var(--text);border-color:var(--line)}
-.btn.sm{padding:9px 16px;font-size:.9rem}
-.kicker{font-size:.85rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
-.lead{font-size:1.15rem;color:var(--muted);max-width:36em;margin-top:22px}
-.cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
-.hero{padding-top:64px;padding-bottom:72px}
-.hero.split{display:grid;grid-template-columns:1.25fr .9fr;gap:56px;align-items:center}
-.hero.centre{text-align:center}
-.hero.centre .lead{margin-left:auto;margin-right:auto}
-.hero.centre .cta,.hero.centre .stats{justify-content:center}
-.hero.editorial{display:grid;grid-template-columns:1.6fr .8fr;gap:64px;align-items:end}
-.hero.editorial h1{font-weight:600;font-size:clamp(2.5rem,6.4vw,5rem)}
-.hero.editorial h1 em{font-style:italic}
-.hero.editorial aside{border-left:1px solid var(--line);padding-left:32px}
-.hero.editorial aside .stats{flex-direction:column;gap:22px;margin:0 0 24px}
-.alert{display:inline-block;background:var(--band);color:var(--on-band);font-weight:600;font-size:.95rem;padding:9px 20px;border-radius:999px;margin-bottom:28px}
-.stats{display:flex;flex-wrap:wrap;gap:36px;margin-top:44px}
-.stats strong{display:block;font-family:var(--display);font-size:1.9rem;line-height:1.1}
-.stats span{font-size:.875rem;color:var(--muted)}
-.quote{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:28px;display:grid;gap:14px}
-.quote label{display:grid;gap:6px;font-size:.85rem;font-weight:600}
-.quote input,.quote select{font:inherit;font-weight:400;padding:12px;border:1px solid var(--line);border-radius:var(--r);background:var(--bg);color:var(--text);width:100%}
-.band{background:var(--band);color:var(--on-band)}
-.band ul{list-style:none;padding:20px;display:flex;flex-wrap:wrap;justify-content:center;gap:10px 40px;font-weight:600;font-size:.95rem;max-width:1160px;margin:0 auto}
-.band li::before{content:"✓ "}
-section.block{padding-block:84px}
-.head{max-width:40em;margin-bottom:44px}
-.head p{color:var(--muted);margin-top:14px}
-.grid{display:grid;gap:18px;grid-template-columns:repeat(3,1fr)}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:26px}
-.card p{color:var(--muted);font-size:.95rem;margin-top:10px}
-.card .n{font-family:var(--display);font-weight:700;color:var(--accent);font-size:.9rem;margin-bottom:14px}
-.work{grid-template-columns:repeat(4,1fr)}
-.job{border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--surface)}
-.job .art{aspect-ratio:4/3;background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 80%,#000),color-mix(in srgb,var(--band) 70%,var(--accent)));position:relative}
-.job .art::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(45deg,transparent 0 22px,rgba(255,255,255,.09) 22px 23px)}
-.job .art b{position:absolute;left:14px;bottom:12px;z-index:1;color:#fff;font-family:var(--display);font-size:1.25rem}
-.job div.t{padding:16px}
-.job div.t p{font-size:.9rem;color:var(--muted)}
-.job div.t span{font-size:.8rem;font-weight:600;color:var(--accent)}
-.alt{background:var(--surface);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-blockquote{font-size:1.02rem}
-.card cite{display:block;margin-top:16px;font-style:normal;font-weight:600;font-size:.9rem}
-.card cite span{font-weight:400;color:var(--muted)}
-.stars{color:var(--accent);letter-spacing:2px;margin-bottom:12px}
-.areas{display:flex;flex-wrap:wrap;gap:10px}
-.areas span{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:8px 16px;font-size:.92rem}
-.two{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
-footer{background:var(--band);color:var(--on-band);padding:44px 0;font-size:.92rem}
-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:20px}
-footer a{font-weight:700}
-@media(max-width:900px){nav{display:none}.hero.split,.hero.editorial,.two{grid-template-columns:1fr;gap:36px}.hero.editorial aside{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:28px}.hero.editorial aside .stats{flex-direction:row}.grid{grid-template-columns:1fr}.work{grid-template-columns:1fr 1fr}.hero{padding-top:44px;padding-bottom:52px}section.block{padding-block:60px}.stats{gap:24px}}
-@media(max-width:480px){header .btn{display:none}.work{grid-template-columns:1fr}}
+.wrap{width:min(1240px,100% - 40px);margin-inline:auto}
+.cond{font-stretch:62%;font-weight:900;text-transform:uppercase;line-height:.86;letter-spacing:-.01em}
+:focus-visible{outline:3px solid var(--k);outline-offset:3px}
+.demo{background:var(--k);color:var(--w);font-size:.8rem;text-align:center;padding:8px 16px}
+.demo a{color:var(--y);font-weight:700}
+
+header{background:var(--y);position:sticky;top:0;z-index:20;border-bottom:3px solid var(--k)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;height:68px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-stretch:75%;font-weight:900;font-size:1.35rem;letter-spacing:-.01em}
+.logo svg{width:30px;height:30px}
+nav{display:flex;gap:26px;font-weight:600;font-size:.95rem}
+nav a{text-decoration:none;border-bottom:2px solid transparent}
+nav a:hover{border-color:var(--k)}
+.call{display:inline-flex;align-items:center;gap:10px;background:var(--k);color:var(--y);text-decoration:none;font-weight:800;padding:11px 18px;border-radius:999px;font-size:1rem;white-space:nowrap}
+.call i{width:9px;height:9px;border-radius:50%;background:#3ddc68;box-shadow:0 0 0 4px rgba(61,220,104,.25)}
+
+.hero{background:var(--y);overflow:hidden;position:relative}
+.hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:end;padding-top:54px}
+.hero h1{font-size:clamp(4rem,11.5vw,10.6rem)}
+.hero h1 span{display:block}
+.hero h1 .out{color:transparent;-webkit-text-stroke:3px var(--k)}
+.hero p.lead{font-size:1.2rem;max-width:34ch;margin:26px 0 30px;font-weight:500}
+.proof{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;font-weight:700;margin-bottom:44px}
+.proof b{font-stretch:62%;font-size:2.6rem;font-weight:900;line-height:1}
+.proof .stars{letter-spacing:3px;font-size:1.1rem}
+.portrait{position:relative;align-self:end}
+.portrait .ph{aspect-ratio:4/5;border-radius:260px 260px 0 0;overflow:hidden;border:3px solid var(--k);border-bottom:0;background:var(--k)}
+.sticker{position:absolute;left:-34px;top:38%;background:var(--w);border:3px solid var(--k);border-radius:50%;width:138px;height:138px;display:grid;place-content:center;text-align:center;transform:rotate(-10deg);font-weight:800;font-size:.82rem;line-height:1.15;box-shadow:6px 6px 0 var(--k)}
+.sticker b{display:block;font-stretch:62%;font-size:2.5rem;font-weight:900;line-height:.9}
+.hazard{height:22px;background:repeating-linear-gradient(-45deg,var(--k) 0 22px,var(--y) 22px 44px);border-top:3px solid var(--k)}
+
+.quick{background:var(--k);color:var(--w)}
+.quick form{display:grid;grid-template-columns:auto 1fr 1fr 1.1fr auto;gap:12px;align-items:center;padding:22px 0}
+.quick strong{font-stretch:62%;font-weight:900;font-size:1.7rem;text-transform:uppercase;color:var(--y);line-height:1;padding-right:8px}
+.quick input,.quick select{font:inherit;padding:14px 16px;border-radius:10px;border:2px solid #3a3b36;background:#1c1d1a;color:var(--w);width:100%}
+.btn{font:inherit;font-weight:800;border:0;cursor:pointer;background:var(--y);color:var(--k);padding:15px 26px;border-radius:10px;text-decoration:none;display:inline-block;white-space:nowrap}
+.btn.dark{background:var(--k);color:var(--y)}
+.note{grid-column:1/-1;font-size:.9rem;color:var(--y);display:none}
+
+section{padding:96px 0}
+h2.cond{font-size:clamp(2.8rem,6.4vw,5.4rem)}
+.sub{font-size:1.1rem;max-width:52ch;margin-top:18px;color:var(--g)}
+
+.jobs{list-style:none;padding:0;margin-top:48px;border-top:3px solid var(--k)}
+.jobs li{display:grid;grid-template-columns:1.1fr 1.4fr auto;gap:28px;align-items:center;padding:24px 0;border-bottom:1px solid var(--line);transition:background .2s,padding .2s}
+.jobs li:hover{background:var(--y);padding-inline:18px}
+.jobs h3{font-stretch:75%;font-weight:900;font-size:1.75rem;line-height:1.05}
+.jobs p{color:var(--g)}
+.jobs .price{font-weight:800;text-align:right;white-space:nowrap;color:var(--k)}
+.jobs .price small{display:block;font-weight:500;color:var(--g);font-size:.8rem}
+
+.ev{background:var(--soft)}
+.ev .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.ev .ph{aspect-ratio:5/4;border-radius:18px;overflow:hidden;border:3px solid var(--k);box-shadow:10px 10px 0 var(--y)}
+.calc{background:var(--w);border:3px solid var(--k);border-radius:18px;padding:30px;margin-top:30px}
+.calc label{display:block;font-weight:700;margin-bottom:8px}
+.seg{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:22px}
+.seg button{font:inherit;font-weight:700;padding:13px;border-radius:10px;border:2px solid var(--k);background:var(--w);color:var(--k);cursor:pointer}
+.seg button[aria-pressed=true]{background:var(--k);color:var(--y)}
+.calc input[type=range]{width:100%;accent-color:var(--k);margin-bottom:6px}
+.calc .row{display:flex;justify-content:space-between;font-size:.92rem;color:var(--g);margin-bottom:20px}
+.calc label.chk{display:flex;gap:10px;align-items:center;font-weight:600;margin-bottom:24px}
+.chk input{width:20px;height:20px;accent-color:var(--k)}
+.total{display:flex;align-items:end;justify-content:space-between;gap:16px;border-top:3px solid var(--k);padding-top:20px}
+.total b{font-stretch:62%;font-weight:900;font-size:4rem;line-height:.85}
+.total span{font-size:.88rem;color:var(--g);max-width:22ch}
+
+.owner .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:64px;align-items:center}
+.owner .ph{aspect-ratio:1;border-radius:50%;overflow:hidden;border:3px solid var(--k);box-shadow:-10px 10px 0 var(--y)}
+.owner blockquote{font-size:clamp(1.4rem,2.5vw,2rem);font-weight:600;line-height:1.3}
+.owner cite{display:block;margin-top:22px;font-style:normal;font-weight:800}
+.owner cite span{font-weight:500;color:var(--g)}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.badges span{border:2px solid var(--k);border-radius:999px;padding:8px 16px;font-weight:700;font-size:.9rem}
+
+.reviews{background:var(--k);color:var(--w)}
+.reviews h2{color:var(--y)}
+.rgrid{display:grid;grid-template-columns:1.3fr 1fr;gap:22px;margin-top:48px}
+.rv{background:#1c1d1a;border-radius:18px;padding:30px}
+.rv.big{grid-row:span 2;background:var(--y);color:var(--k);display:flex;flex-direction:column;justify-content:space-between}
+.rv.big p{font-size:clamp(1.6rem,3vw,2.5rem);font-weight:700;line-height:1.15}
+.rv p{font-size:1.05rem}
+.rv footer{margin-top:20px;font-weight:700;font-size:.92rem}
+.rv footer span{opacity:.65;font-weight:500}
+
+.areas .wrap{display:grid;grid-template-columns:1fr 1fr;gap:64px}
+.towns{columns:2;list-style:none;padding:0;margin-top:30px;font-weight:700;font-size:1.15rem}
+.towns li{padding:9px 0;border-bottom:1px solid var(--line);break-inside:avoid}
+.cta{background:var(--y);border:3px solid var(--k);border-radius:22px;padding:38px;box-shadow:10px 10px 0 var(--k);align-self:start}
+.cta h3{font-size:3.2rem}
+.cta p{margin:14px 0 24px;font-weight:500}
+.cta .tel{display:block;font-stretch:62%;font-weight:900;font-size:clamp(2.6rem,5vw,4rem);text-decoration:none;line-height:1;margin-bottom:22px}
+
+.foot{background:var(--k);color:#b9b8ad;padding:36px 0;font-size:.9rem}
+.foot .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:16px}
+.foot a{color:var(--y)}
+.bar{display:none}
+
+@media(max-width:920px){
+  nav{display:none}
+  .hero .wrap,.ev .wrap,.owner .wrap,.areas .wrap{grid-template-columns:1fr;gap:36px}
+  .portrait{max-width:420px;margin-inline:auto}.sticker{left:-8px}
+  .quick form{grid-template-columns:1fr}
+  .jobs li{grid-template-columns:1fr;gap:8px}.jobs .price{text-align:left}
+  .rgrid{grid-template-columns:1fr}
+  section{padding:68px 0}
+  .owner .ph{max-width:260px}
+  header .call{display:none}
+  .bar{display:grid;grid-template-columns:1fr 1fr;position:fixed;inset:auto 0 0 0;z-index:30;border-top:3px solid var(--k)}
+  .bar a{padding:16px;text-align:center;font-weight:800;text-decoration:none;background:var(--y)}
+  .bar a+a{background:var(--k);color:var(--y)}
+  body{padding-bottom:58px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.jobs li{transition:none}}
 </style>
 </head>
 <body>
-<div class="demo">Example design for a fictional business, not a real company. <a href="/#trades">Websites for UK trades by Asharab Hassan &rarr;</a></div>
+<div class="demo">Example design for a fictional business, not a real company. <a href="/#trades">Websites for UK trades by Asharab Hassan</a></div>
+
 <header><div class="wrap">
-  <a class="logo" href="#"><span>B</span>Brightwell Electrical</a>
-  <nav><a href="#services">Services</a><a href="#work">Recent work</a><a href="#reviews">Reviews</a><a href="#areas">Areas</a></nav>
-  <a class="btn sm" href="tel:01614960142">0161 496 0142</a>
+  <a class="logo" href="#top" aria-label="Brightwell Electrical home">
+    <svg viewBox="0 0 30 30" aria-hidden="true"><circle cx="15" cy="15" r="15" fill="#111210"/><path d="M17 4 8 17h6l-1 9 9-13h-6z" fill="#ffd60a"/></svg>
+    Brightwell
+  </a>
+  <nav aria-label="Main"><a href="#jobs">What we do</a><a href="#ev">EV chargers</a><a href="#reviews">Reviews</a><a href="#areas">Areas</a></nav>
+  <a class="call" href="tel:01614960142"><i></i>0161 496 0142</a>
 </div></header>
-<main>
-<section class="hero split wrap"><div><p class="kicker">NICEIC approved · Stockport &amp; South Manchester</p>
-      <h1>Electrical work done properly, <em>first time.</em></h1>
-      <p class="lead">Rewires, consumer units, EV chargers and fault finding for homes and landlords. Fixed prices agreed before we start, and a certificate for every job.</p>
-      <div class="cta"><a class="btn" href="#quote">Get a free quote</a><a class="btn ghost" href="tel:01614960142">Call 0161 496 0142</a></div><div class="stats"><div><strong>4.9★</strong><span>from 86 Google reviews</span></div><div><strong>12 yrs</strong><span>trading locally</span></div><div><strong>24 hr</strong><span>emergency call-out</span></div></div></div><div><form class="quote" onsubmit="event.preventDefault();this.querySelector('.sent').hidden=false">
-    <h3>Get a free quote</h3>
-    <p class="small">Tell us about the job and we will call you back the same day.</p>
-    <label>Your name<input type="text" placeholder="Jane Cooper"></label>
-    <label>Phone<input type="tel" placeholder="07..."></label>
-    <label>What do you need?<select><option>Rewire</option><option>Consumer unit</option><option>EV charger</option><option>Fault or repair</option><option>Landlord certificate</option><option>Something else</option></select></label>
-    <label>Postcode<input type="text" placeholder="e.g. SK4"></label>
-    <button class="btn" type="submit">Request my quote</button>
-    <p class="sent small" hidden>This is an example design, so nothing was sent.</p>
-  </form></div></section>
-<div class="band"><ul><li>NICEIC Approved Contractor</li><li>Part P registered</li><li>£5m public liability</li><li>12-month workmanship guarantee</li></ul></div>
-<section class="block wrap" id="services">
-  <div class="head"><h2>What we do</h2><p>Clear prices, tidy work and a proper guarantee on every job, large or small.</p></div>
-  <div class="grid"><div class="card"><p class="n">01</p><h3>Full and partial rewires</h3><p>Old wiring replaced room by room, with the house kept liveable while we work.</p></div><div class="card"><p class="n">02</p><h3>Consumer unit upgrades</h3><p>Modern fuse boards with RCD and surge protection, tested and certified.</p></div><div class="card"><p class="n">03</p><h3>EV charger installation</h3><p>Home chargers fitted and registered, usually in half a day.</p></div><div class="card"><p class="n">04</p><h3>Fault finding</h3><p>Tripping circuits, dead sockets and flickering lights traced and fixed.</p></div><div class="card"><p class="n">05</p><h3>Landlord certificates</h3><p>EICR inspections with clear reports and fast remedial work.</p></div><div class="card"><p class="n">06</p><h3>Lighting and sockets</h3><p>Extra sockets, downlights, garden and security lighting.</p></div></div>
-</section>
-<section class="block alt" id="work"><div class="wrap">
-  <div class="head"><h2>Recent work</h2><p>A few of the jobs we have finished around Stockport lately. Your own photos go here.</p></div>
-  <div class="grid work"><div class="job"><div class="art"><b>Full rewire</b></div><div class="t"><p>1930s semi, Heaton Moor</p><span>Completed in 5 days</span></div></div><div class="job"><div class="art"><b>EV charger</b></div><div class="t"><p>Driveway install, Bramhall</p><span>Completed in 4 hours</span></div></div><div class="job"><div class="art"><b>Consumer unit</b></div><div class="t"><p>18-way board, Cheadle Hulme</p><span>Completed in 1 day</span></div></div><div class="job"><div class="art"><b>Kitchen lighting</b></div><div class="t"><p>Downlights and under-cabinet, Marple</p><span>Completed in 2 days</span></div></div></div>
+
+<main id="top">
+<div class="hero">
+  <div class="wrap">
+    <div>
+      <h1 class="cond"><span>Lights on.</span><span class="out">Job done.</span><span>Sorted.</span></h1>
+      <p class="lead">Stockport electricians for rewires, fuse boards, EV chargers and faults. Price agreed before we start, certificate when we finish.</p>
+      <div class="proof"><b>4.9</b><span><span class="stars" aria-hidden="true">★★★★★</span><br>86 Google reviews</span><span>NICEIC approved<br>12 years local</span></div>
+    </div>
+    <div class="portrait">
+      <div class="ph"><img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=900&q=70" alt="An electrician in a yellow hard hat fitting wiring"></div>
+      <div class="sticker"><span><b>60</b>minute<br>emergency<br>call-out</span></div>
+    </div>
+  </div>
+  <div class="hazard" aria-hidden="true"></div>
+</div>
+
+<div class="quick"><div class="wrap">
+  <form data-demo>
+    <strong>Get a price<br>today</strong>
+    <input name="name" placeholder="Your name" aria-label="Your name" required>
+    <input name="phone" type="tel" placeholder="Phone number" aria-label="Phone number" required>
+    <select name="job" aria-label="What do you need?"><option>Fault or repair</option><option>Fuse board upgrade</option><option>EV charger</option><option>Rewire</option><option>Landlord certificate</option><option>Something else</option></select>
+    <button class="btn">Call me back</button>
+    <p class="note" role="status">This is an example design, so nothing was sent. On your site this form sends the enquiry straight to your phone.</p>
+  </form>
+</div></div>
+
+<section id="jobs"><div class="wrap">
+  <h2 class="cond">Fixed prices.<br>No surprises.</h2>
+  <p class="sub">Every job is quoted in writing first. If we find something unexpected, we stop and show you before the price changes.</p>
+  <ul class="jobs">
+    <li><h3>Fault finding</h3><p>Tripping circuits, dead sockets, flickering lights. Traced and fixed, usually the same day.</p><p class="price">from £75<small>first hour</small></p></li>
+    <li><h3>Fuse board upgrade</h3><p>Modern consumer unit with RCD and surge protection, tested and certified.</p><p class="price">from £495<small>one day</small></p></li>
+    <li><h3>EV charger</h3><p>7kW home charger fitted, registered with your network and set up on your phone.</p><p class="price">from £849<small>half a day</small></p></li>
+    <li><h3>Full rewire</h3><p>Room by room, so the house stays liveable. Made good and ready to decorate.</p><p class="price">from £3,900<small>3-bed semi</small></p></li>
+    <li><h3>Landlord EICR</h3><p>Inspection, a plain-English report and fast remedial work if anything fails.</p><p class="price">from £160<small>per property</small></p></li>
+  </ul>
 </div></section>
-<section class="block wrap" id="reviews">
-  <div class="head"><h2>What customers say</h2><p>Pulled straight from your Google reviews, so new customers see them before they call.</p></div>
-  <div class="grid"><div class="card"><div class="stars">★★★★★</div><blockquote>&ldquo;Turned up when he said, explained everything and left the place spotless. The new board passed first time.&rdquo;</blockquote><cite>Karen M. <span>· Heaton Moor</span></cite></div><div class="card"><div class="stars">★★★★★</div><blockquote>&ldquo;Charger fitted in a morning and he registered it for us. Price was exactly what was quoted.&rdquo;</blockquote><cite>Dev P. <span>· Bramhall</span></cite></div><div class="card"><div class="stars">★★★★★</div><blockquote>&ldquo;Found a fault two other electricians missed. Honest about what did and did not need doing.&rdquo;</blockquote><cite>Tom R. <span>· Cheadle</span></cite></div></div>
-</section>
-<section class="block alt" id="areas"><div class="wrap two">
-  <div><div class="head"><h2>Areas we cover</h2><p>Based in Stockport and working within about ten miles.</p></div><div class="areas"><span>Stockport</span><span>Heaton Moor</span><span>Bramhall</span><span>Cheadle</span><span>Cheadle Hulme</span><span>Marple</span><span>Hazel Grove</span><span>Didsbury</span><span>Poynton</span><span>Romiley</span></div></div>
-  <div id="quote"><form class="quote" onsubmit="event.preventDefault();this.querySelector('.sent').hidden=false">
-    <h3>Get a free quote</h3>
-    <p class="small">Tell us about the job and we will call you back the same day.</p>
-    <label>Your name<input type="text" placeholder="Jane Cooper"></label>
-    <label>Phone<input type="tel" placeholder="07..."></label>
-    <label>What do you need?<select><option>Rewire</option><option>Consumer unit</option><option>EV charger</option><option>Fault or repair</option><option>Landlord certificate</option><option>Something else</option></select></label>
-    <label>Postcode<input type="text" placeholder="e.g. SK4"></label>
-    <button class="btn" type="submit">Request my quote</button>
-    <p class="sent small" hidden>This is an example design, so nothing was sent.</p>
-  </form></div>
+
+<section class="ev" id="ev"><div class="wrap">
+  <div>
+    <h2 class="cond">Price your EV charger</h2>
+    <p class="sub">Move the slider and see an estimate straight away. No phone call needed.</p>
+    <div class="calc">
+      <label id="tl">Charger type</label>
+      <div class="seg" role="group" aria-labelledby="tl">
+        <button type="button" data-base="849" aria-pressed="true">Tethered 7kW</button>
+        <button type="button" data-base="799" aria-pressed="false">Untethered 7kW</button>
+      </div>
+      <label for="run">Cable run from fuse board</label>
+      <input id="run" type="range" min="5" max="40" value="10">
+      <div class="row"><span>5m</span><b id="runv">10 metres</b><span>40m</span></div>
+      <label class="chk"><input id="board" type="checkbox"> My fuse board is more than 15 years old</label>
+      <div class="total"><b id="sum">£849</b><span>Fitted, certified and registered. Final price confirmed after a free survey.</span></div>
+    </div>
+  </div>
+  <div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1704475187766-058b6f7b7929?auto=format&fit=crop&w=1100&q=70" alt="An electric car plugged into a wall charger at home"></div>
+</div></section>
+
+<section class="owner"><div class="wrap">
+  <div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1660330589693-99889d60181e?auto=format&fit=crop&w=800&q=70" alt="Dan from Brightwell Electrical at work with a screwdriver"></div>
+  <div>
+    <blockquote>&ldquo;I started Brightwell because I was tired of fixing other people&rsquo;s shortcuts. You get me or one of my two lads, never a subcontractor, and we hoover up before we leave.&rdquo;</blockquote>
+    <cite>Dan Brightwell<span>, owner and electrician since 2009</span></cite>
+    <div class="badges"><span>NICEIC Approved Contractor</span><span>Part P registered</span><span>£5m public liability</span><span>12-month guarantee</span></div>
+  </div>
+</div></section>
+
+<section class="reviews" id="reviews"><div class="wrap">
+  <h2 class="cond">86 reviews.<br>4.9 stars.</h2>
+  <div class="rgrid">
+    <div class="rv big"><p>&ldquo;Found a fault two other electricians missed, and told me what didn&rsquo;t need doing.&rdquo;</p><footer>Tom R. <span>Cheadle, fault finding</span></footer></div>
+    <div class="rv"><p>&ldquo;Turned up when he said, explained everything and left the place spotless. The new board passed first time.&rdquo;</p><footer>Karen M. <span>Heaton Moor</span></footer></div>
+    <div class="rv"><p>&ldquo;Charger fitted in a morning and he registered it for us. Price was exactly what was quoted.&rdquo;</p><footer>Dev P. <span>Bramhall</span></footer></div>
+  </div>
+</div></section>
+
+<section class="areas" id="areas"><div class="wrap">
+  <div>
+    <h2 class="cond">Where we work</h2>
+    <p class="sub">Based in Stockport, working within about ten miles.</p>
+    <ul class="towns"><li>Stockport</li><li>Heaton Moor</li><li>Bramhall</li><li>Cheadle</li><li>Cheadle Hulme</li><li>Marple</li><li>Hazel Grove</li><li>Didsbury</li><li>Poynton</li><li>Romiley</li></ul>
+  </div>
+  <div class="cta">
+    <h3 class="cond">Need a sparky?</h3>
+    <p>Phones answered 7am to 8pm, seven days. Emergencies around the clock.</p>
+    <a class="tel" href="tel:01614960142">0161 496 0142</a>
+    <a class="btn dark" href="#top">Or get a price online</a>
+  </div>
 </div></section>
 </main>
-<footer><div class="wrap"><div><strong>Brightwell Electrical</strong><br>Electricians in Stockport</div><div>Call <a href="tel:01614960142">0161 496 0142</a><br>Mon to Sat, 7am to 6pm</div><div>Example design by <a href="/#trades">Asharab Hassan</a></div></div></footer>
+
+<div class="foot"><div class="wrap"><span>Brightwell Electrical, Stockport. Example design, not a real company.</span><span>Design by <a href="/#trades">Asharab Hassan</a>. Photos from Unsplash.</span></div></div>
+<div class="bar"><a href="tel:01614960142">Call now</a><a href="#top">Get a price</a></div>
+
+<script>
+document.querySelectorAll('form[data-demo]').forEach(f=>f.addEventListener('submit',e=>{e.preventDefault();f.querySelector('.note').style.display='block'}));
+(()=>{let base=849;const run=document.getElementById('run'),board=document.getElementById('board'),sum=document.getElementById('sum'),rv=document.getElementById('runv');
+const calc=()=>{const m=+run.value;const t=base+Math.max(0,m-10)*14+(board.checked?420:0);rv.textContent=m+' metres';sum.textContent='£'+t.toLocaleString('en-GB')};
+document.querySelectorAll('.seg button').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('.seg button').forEach(x=>x.setAttribute('aria-pressed','false'));b.setAttribute('aria-pressed','true');base=+b.dataset.base;calc()}));
+run.addEventListener('input',calc);board.addEventListener('change',calc)})();
+</script>
 </body>
 </html>

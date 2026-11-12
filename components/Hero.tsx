@@ -29,16 +29,16 @@ export default function Hero() {
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <a
-              href="#work"
+              href="#examples"
               className="rounded-full bg-signal px-7 py-3.5 text-sm font-semibold text-ink transition-transform duration-300 hover:-translate-y-0.5"
             >
-              See the work
+              See example designs
             </a>
             <a
-              href="#contact"
+              href="#work"
               className="rounded-full border border-ink-line px-7 py-3.5 text-sm font-semibold text-bone transition-colors duration-300 hover:border-bone/40 hover:bg-bone/5"
             >
-              Start a project
+              Live client sites
             </a>
           </div>
 
