@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hale &amp; Float Plastering | Derby (example design)</title>
+<meta name="description" content="Example website design for a plasterer, by Asharab Hassan. Hale & Float Plastering is a fictional business.">
+<meta name="robots" content="noindex">
+<link rel="icon" href="/icon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Epilogue:wght@400;500;600;700&family=Albert+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--dry:#ece3da;--skim:#f6f1eb;--wet:#b5806b;--wet2:#8f5d4b;--umber:#33271f;--slate:#5d6263;--rule:rgba(51,39,31,.18)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{font-family:"Albert Sans",system-ui,sans-serif;background:var(--dry);color:var(--umber);line-height:1.6;-webkit-font-smoothing:antialiased}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit}
+.wrap{width:min(1260px,100% - 48px);margin-inline:auto}
+h1,h2,h3{font-family:"Epilogue",system-ui,sans-serif;font-weight:600;letter-spacing:-.035em;line-height:1}
+:focus-visible{outline:2px solid var(--wet2);outline-offset:4px}
+.demo{background:var(--umber);color:#d9cdc2;font-size:.8rem;text-align:center;padding:8px 16px}
+.demo a{color:#e8b9a3;font-weight:600}
+
+header .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 0}
+.logo{font-family:"Epilogue",sans-serif;font-weight:700;font-size:1.25rem;letter-spacing:-.03em;text-decoration:none;display:flex;align-items:center;gap:10px}
+.logo svg{width:34px;height:22px}
+nav{display:flex;gap:30px;font-size:.95rem}
+nav a{text-decoration:none}nav a:hover{text-decoration:underline;text-underline-offset:6px}
+.btn{font:inherit;font-weight:600;cursor:pointer;border:0;background:var(--umber);color:var(--skim);padding:15px 26px;border-radius:4px;text-decoration:none;display:inline-block;transition:background .25s}
+.btn:hover{background:var(--wet2)}
+.btn.line{background:transparent;color:var(--umber);box-shadow:inset 0 0 0 1.5px var(--umber)}
+.btn.line:hover{background:var(--umber);color:var(--skim)}
+
+.hero .main{display:grid;grid-template-columns:1.1fr .9fr;gap:0;align-items:stretch;min-height:min(78vh,720px)}
+.hero .txt{padding:56px 56px 56px 0;display:flex;flex-direction:column;justify-content:flex-end}
+.hero h1{font-size:clamp(2.9rem,6.3vw,5.6rem)}
+.hero h1 span{display:block}
+.hero p{font-size:1.15rem;font-weight:300;max-width:42ch;margin:28px 0 32px}
+.hero .row{display:flex;gap:12px;flex-wrap:wrap}
+.hero .ph{position:relative;min-height:420px}
+.hero .ph img{position:absolute;inset:0}
+.hero .tag{position:absolute;left:0;bottom:0;background:var(--dry);padding:16px 22px 0 0;font-size:.9rem;max-width:26ch}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--rule);margin-top:0}
+.facts div{padding:22px 20px 26px 0;font-size:.92rem;color:var(--slate)}
+.facts div+div{padding-left:22px;border-left:1px solid var(--rule)}
+.facts b{display:block;font-family:"Epilogue",sans-serif;font-weight:600;font-size:1.7rem;color:var(--umber);letter-spacing:-.03em}
+
+section{padding:110px 0}
+.h2{font-size:clamp(2rem,4.2vw,3.4rem);max-width:18ch}
+.lede{font-weight:300;font-size:1.1rem;max-width:52ch;margin-top:16px}
+
+.finish{background:var(--skim)}
+.fgrid{display:grid;grid-template-columns:.85fr 1.15fr;gap:60px;margin-top:54px;align-items:start}
+.flist{list-style:none;padding:0;border-top:1px solid var(--rule)}
+.flist button{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:grid;grid-template-columns:44px 1fr auto;gap:16px;align-items:center;padding:18px 0;border-bottom:1px solid var(--rule)}
+.flist i{width:44px;height:44px;border-radius:50%;background-size:cover;box-shadow:inset 0 0 0 1px rgba(51,39,31,.15)}
+.flist b{font-family:"Epilogue",sans-serif;font-weight:600;font-size:1.3rem;letter-spacing:-.02em}
+.flist span{font-size:.92rem;color:var(--slate)}
+.flist button[aria-selected=true] b{color:var(--wet2)}
+.flist button[aria-selected=true] i{box-shadow:0 0 0 2px var(--skim),0 0 0 4px var(--wet2)}
+.flist button:focus-visible{outline:2px solid var(--wet2);outline-offset:-2px}
+.sample{position:sticky;top:26px}
+.sample .sw{aspect-ratio:16/11;background-size:cover;background-position:center;position:relative;overflow:hidden}
+.sample .sw::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,var(--gloss,0)) 0%,transparent 38%,transparent 62%,rgba(0,0,0,calc(var(--gloss,0)*.6)) 100%)}
+.spec{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-bottom:1px solid var(--rule)}
+.spec div{padding:18px 16px 20px 0;font-size:.95rem}
+.spec div+div{padding-left:18px;border-left:1px solid var(--rule)}
+.spec small{display:block;color:var(--slate);font-size:.82rem;margin-bottom:4px}
+.sample p{margin-top:18px;font-weight:300;max-width:56ch}
+
+.price .wrap{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center}
+.calc{background:var(--umber);color:var(--skim);padding:36px;border-radius:4px}
+.calc label{display:flex;justify-content:space-between;font-size:.95rem;margin-bottom:8px}
+.calc label b{font-weight:600}
+.calc input[type=range]{width:100%;accent-color:#e0a58c;margin-bottom:22px}
+.calc label.tog{display:flex;justify-content:flex-start;gap:12px;align-items:center;font-size:.95rem;margin-bottom:12px;cursor:pointer}
+.tog input{width:19px;height:19px;accent-color:#e0a58c}
+.out{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:end;border-top:1px solid rgba(246,241,235,.25);margin-top:22px;padding-top:22px}
+.out b{font-family:"Epilogue",sans-serif;font-weight:600;font-size:clamp(2.8rem,5vw,4rem);letter-spacing:-.04em;line-height:.9}
+.out span{font-size:.9rem;color:#cdbfb3;text-align:right}
+.calc small{display:block;margin-top:16px;color:#cdbfb3;font-size:.84rem}
+
+.dry{background:var(--wet);color:#fff8f2;transition:background 1.2s}
+.dry .h2,.dry .lede{color:inherit}
+.tl{list-style:none;padding:0;margin-top:60px;display:grid;grid-template-columns:repeat(5,1fr);gap:0;counter-reset:d}
+.tl li{padding:0 22px 0 0;position:relative}
+.tl li::before{content:"";display:block;height:74px;margin-bottom:20px;border-radius:2px;background:var(--c);box-shadow:inset 0 0 0 1px rgba(255,255,255,.25)}
+.tl h3{font-size:1.15rem;letter-spacing:-.02em;margin-bottom:6px}
+.tl small{display:block;font-size:.85rem;opacity:.85;margin-bottom:8px;font-weight:500}
+.tl p{font-size:.95rem;font-weight:300}
+
+.jobs{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:18px;margin-top:54px}
+.job .ph{aspect-ratio:4/5;overflow:hidden}
+.job:first-child .ph{aspect-ratio:auto;height:100%;min-height:420px}
+.job{display:flex;flex-direction:column}
+.job:first-child{grid-row:span 1}
+.job figcaption,.job .cap{display:flex;justify-content:space-between;gap:14px;padding-top:12px;font-size:.92rem}
+.job .cap span:last-child{color:var(--slate);text-align:right}
+
+.words{background:var(--skim)}
+.words .wrap{display:grid;grid-template-columns:1.25fr .75fr;gap:70px;align-items:start}
+.words blockquote{font-family:"Epilogue",sans-serif;font-weight:500;font-size:clamp(1.6rem,3vw,2.4rem);letter-spacing:-.03em;line-height:1.15}
+.words cite{display:block;margin-top:20px;font:400 1rem "Albert Sans",sans-serif;color:var(--slate)}
+.clean{list-style:none;padding:0;border-top:1px solid var(--rule)}
+.clean li{padding:15px 0;border-bottom:1px solid var(--rule);display:flex;gap:14px}
+.clean li::before{content:"";flex:0 0 10px;height:10px;margin-top:8px;border-radius:50%;background:var(--wet)}
+
+.send .wrap{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:end}
+.send h2{font-size:clamp(2.6rem,6vw,5rem)}
+.send .steps{list-style:none;padding:0;counter-reset:s;margin-top:30px;display:grid;gap:12px}
+.send .steps li{counter-increment:s;display:grid;grid-template-columns:34px 1fr;gap:12px;font-size:1.05rem}
+.send .steps li::before{content:counter(s);font-family:"Epilogue",sans-serif;font-weight:600;color:var(--wet2)}
+.send .box{background:var(--skim);padding:34px;border-radius:4px}
+.send .tel{display:block;font-family:"Epilogue",sans-serif;font-weight:600;font-size:clamp(2rem,4vw,3rem);letter-spacing:-.04em;text-decoration:none;margin:10px 0 22px}
+.foot{padding:30px 0;border-top:1px solid var(--rule);font-size:.88rem;color:var(--slate)}
+.foot .wrap{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between}
+.bar{display:none}
+
+@media(max-width:940px){
+  nav,header .btn{display:none}
+  .wrap{width:min(1260px,100% - 40px)}
+  .hero .main,.fgrid,.price .wrap,.words .wrap,.send .wrap{grid-template-columns:1fr;gap:36px}
+  .hero .txt{padding:20px 0 0}
+  .hero .ph{min-height:340px}
+  .facts{grid-template-columns:1fr 1fr}.facts div:nth-child(3){padding-left:0;border-left:0}.facts div:nth-child(n+3){border-top:1px solid var(--rule)}
+  .sample{position:static;order:-1}
+  .tl{grid-template-columns:1fr 1fr;gap:30px 0}
+  .jobs{grid-template-columns:1fr}.job:first-child .ph{min-height:0;aspect-ratio:4/3}.job .ph{aspect-ratio:4/3}
+  section{padding:72px 0}
+  .bar{display:grid;grid-template-columns:1fr 1fr;position:fixed;inset:auto 0 0 0;z-index:30}
+  .bar a{padding:16px;text-align:center;font-weight:600;text-decoration:none;background:var(--umber);color:var(--skim)}
+  .bar a+a{background:var(--wet);color:#fff}
+  body{padding-bottom:56px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.dry{transition:none}}
+</style>
+</head>
+<body>
+<div class="demo">Example design for a fictional business, not a real company. <a href="/#examples">Websites for UK trades by Asharab Hassan</a></div>
+
+<header><div class="wrap">
+  <a class="logo" href="#top"><svg viewBox="0 0 34 22" aria-hidden="true"><rect x="1" y="9" width="32" height="5" rx="1" fill="#33271f"/><path d="M12 9c0-4 3-7 5-7s5 3 5 7" fill="none" stroke="#b5806b" stroke-width="3"/></svg>Hale &amp; Float</a>
+  <nav aria-label="Main"><a href="#finishes">Finishes</a><a href="#price">Price a room</a><a href="#drying">Drying times</a><a href="#work">Recent rooms</a></nav>
+  <a class="btn" href="#send">Get a price from photos</a>
+</div></header>
+
+<main id="top">
+<div class="hero"><div class="wrap main">
+  <div class="txt">
+    <h1><span>Flat walls.</span><span>Sharp corners.</span><span>No dust left behind.</span></h1>
+    <p>Plasterers in Derby for skimming, rendering and period repairs. Send us three photos tonight and you&rsquo;ll have a fixed price by morning.</p>
+    <div class="row"><a class="btn" href="#price">Price my room</a><a class="btn line" href="#send">Send photos instead</a></div>
+  </div>
+  <div class="ph">
+    <img src="https://images.unsplash.com/photo-1768839725085-829e6ac7ac26?auto=format&fit=crop&w=1100&q=72" alt="Hands laying plaster onto a wall with two trowels">
+    <p class="tag">Second coat going on in Mickleover. Trowelled six times before it sets.</p>
+  </div>
+</div>
+<div class="wrap"><div class="facts"><div><b>5.0</b>from 154 Google reviews</div><div><b>19 years</b>on the hawk and trowel</div><div><b>1 day</b>for most single rooms</div><div><b>NVQ 3</b>and fully insured</div></div></div>
+</div>
+
+<section class="finish" id="finishes"><div class="wrap">
+  <h2 class="h2">Pick a finish and see it up close</h2>
+  <p class="lede">Most rooms need a smooth skim. Some deserve more. Every sample below is one we can bring to your door.</p>
+  <div class="fgrid">
+    <ul class="flist" role="tablist" aria-label="Plaster finishes"></ul>
+    <div class="sample" role="tabpanel">
+      <div class="sw" id="sw"></div>
+      <div class="spec"><div><small>Best for</small><span id="s1"></span></div><div><small>From</small><span id="s2"></span></div><div><small>Ready to decorate</small><span id="s3"></span></div></div>
+      <p id="s4"></p>
+    </div>
+  </div>
+</div></section>
+
+<section class="price" id="price"><div class="wrap">
+  <div>
+    <h2 class="h2">Price your room before you ring</h2>
+    <p class="lede">This is the same sum we do on site. It covers a two-coat skim on sound walls, with floors sheeted and everything hoovered at the end.</p>
+  </div>
+  <div class="calc">
+    <label for="len">Room length <b id="lv">4.0 m</b></label>
+    <input id="len" type="range" min="2" max="8" step="0.5" value="4">
+    <label for="wid">Room width <b id="wv">3.5 m</b></label>
+    <input id="wid" type="range" min="2" max="7" step="0.5" value="3.5">
+    <label class="tog"><input id="ceil" type="checkbox" checked> Include the ceiling</label>
+    <label class="tog"><input id="artex" type="checkbox"> Walls or ceiling are Artex or textured</label>
+    <div class="out"><b id="sum">£0</b><span id="days"></span></div>
+    <small>Estimate for a room 2.4 m high. We confirm the price from photos or a visit, and that price is fixed.</small>
+  </div>
+</div></section>
+
+<section class="dry" id="drying"><div class="wrap">
+  <h2 class="h2">When can I paint?</h2>
+  <p class="lede">The question everyone asks. Fresh plaster goes from dark pink to pale as it dries. Paint too soon and it peels.</p>
+  <ol class="tl">
+    <li style="--c:#8f5d4b"><h3>We finish</h3><small>Day 0</small><p>Dark, glossy and cool to the touch. Leave the windows on the latch.</p></li>
+    <li style="--c:#a87560"><h3>Patchy</h3><small>Day 1 to 2</small><p>Light patches spread from the middle. Don&rsquo;t point a heater at it.</p></li>
+    <li style="--c:#cfa590"><h3>Nearly there</h3><small>Day 3 to 5</small><p>Dark corners remain. Those are the last to dry.</p></li>
+    <li style="--c:#ead3c5"><h3>Dry</h3><small>About a week</small><p>Even pale pink all over. Now it&rsquo;s ready for a mist coat.</p></li>
+    <li style="--c:#f6f1eb"><h3>Paint</h3><small>The day after</small><p>Watered-down first coat, then two full coats of your colour.</p></li>
+  </ol>
+</div></section>
+
+<section id="work"><div class="wrap">
+  <h2 class="h2">Recent rooms, by street</h2>
+  <div class="jobs">
+    <figure class="job" style="margin:0"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1757742690834-aa581b9f53b2?auto=format&fit=crop&w=1200&q=72" alt="An empty room with a wooden floor and newly finished walls"></div><div class="cap"><span>Kedleston Road, Derby</span><span>Whole floor reskimmed, 4 days</span></div></figure>
+    <figure class="job" style="margin:0"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1792630861803-0d4502fa3211?auto=format&fit=crop&w=800&q=72" alt="An empty living room with smooth grey walls"></div><div class="cap"><span>Burton Road, Littleover</span><span>Artex removed, 2 days</span></div></figure>
+    <figure class="job" style="margin:0"><div class="ph"><img loading="lazy" src="https://images.unsplash.com/photo-1776655890108-b8b0a8f3b5cf?auto=format&fit=crop&w=800&q=72" alt="A house with a crisp white rendered exterior"></div><div class="cap"><span>Duffield Bank, Belper</span><span>Silicone render, 6 days</span></div></figure>
+  </div>
+</div></section>
+
+<section class="words"><div class="wrap">
+  <div>
+    <blockquote>&ldquo;I ran a torch along the wall like the YouTube videos say. Not a ripple. And the carpet was cleaner than when he arrived.&rdquo;</blockquote>
+    <cite>Sandra K., lounge and hall, Allestree</cite>
+  </div>
+  <div>
+    <h3 style="font-size:1.3rem;margin-bottom:16px">What we do so you don&rsquo;t have to</h3>
+    <ul class="clean"><li>Sheet every floor and tape every doorway</li><li>Move furniture out and back again</li><li>Mix outside, never in your kitchen sink</li><li>Hoover and wipe down before we leave</li></ul>
+  </div>
+</div></section>
+
+<section class="send" id="send"><div class="wrap">
+  <div>
+    <h2>Three photos. One fixed price.</h2>
+    <ol class="steps"><li>Stand in the doorway and photograph each wall.</li><li>Send them on WhatsApp with rough sizes.</li><li>Get a written price back, usually the same evening.</li></ol>
+  </div>
+  <div class="box">
+    <p>WhatsApp or call Martin</p>
+    <a class="tel" href="tel:01332960128">01332 960128</a>
+    <a class="btn" href="#send" id="wa">Send photos on WhatsApp</a>
+    <p id="wan" style="display:none;margin-top:14px;font-size:.92rem;color:var(--wet2);font-weight:600" role="status">This is an example design, so no chat was opened. On your site this opens WhatsApp with your number.</p>
+  </div>
+</div></section>
+</main>
+
+<div class="foot"><div class="wrap"><span>Hale &amp; Float Plastering, Derby. Example design, not a real company.</span><span>Design by <a href="/#examples">Asharab Hassan</a>. Photos from Unsplash. Finish samples are drawn, not photographed.</span></div></div>
+<div class="bar"><a href="tel:01332960128">Call Martin</a><a href="#price">Price my room</a></div>
+
+<script>
+(()=>{
+const tex=(base,tint,fx,fy,oct,op,seed)=>'url("data:image/svg+xml,'+encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' width='900' height='620'><filter id='n' x='0' y='0' width='100%' height='100%'><feTurbulence type='fractalNoise' baseFrequency='${fx} ${fy}' numOctaves='${oct}' seed='${seed}'/><feColorMatrix values='0 0 0 0 ${tint[0]} 0 0 0 0 ${tint[1]} 0 0 0 0 ${tint[2]} 0 0 0 ${op*2.2} ${-op*.55}'/></filter><rect width='100%' height='100%' fill='${base}'/><rect width='100%' height='100%' filter='url(#n)'/></svg>`)+'")';
+const F=[
+ {n:'Smooth skim',k:'The everyday finish',bg:tex('#e6d3c5',[.5,.32,.26],.004,.03,4,.3,4),gloss:.14,a:'Any room you plan to paint or paper',b:'£14 per m²',c:'About a week',d:'Two coats of multi-finish, trowelled until it is flat enough to take a raking light. It is what nine in ten of our customers need.'},
+ {n:'Polished Venetian',k:'Marble-like, by hand',bg:tex('#cbb9a5',[.3,.22,.16],.006,.014,4,.5,11),gloss:.22,a:'Feature walls, hallways, bathrooms',b:'£85 per m²',c:'Sealed and finished on the day',d:'Lime and marble dust built up in thin layers and burnished with a steel trowel. No two walls come out the same.'},
+ {n:'Lime plaster',k:'For homes that need to breathe',bg:tex('#e9e2cf',[.5,.44,.3],.012,.05,5,.34,7),gloss:0,a:'Pre-1919 houses and solid walls',b:'£38 per m²',c:'Three to four weeks',d:'Old walls trap damp behind modern gypsum. Lime lets moisture out, which is why we use it on every Victorian and Georgian house.'},
+ {n:'Microcement',k:'Seamless and waterproof',bg:tex('#a8a6a1',[.2,.2,.2],.014,.02,5,.42,21),gloss:.1,a:'Wet rooms, floors, worktops',b:'£95 per m²',c:'Sealed, usable in 48 hours',d:'A three-millimetre skin with no grout lines. It goes over tiles, so there is often nothing to rip out.'},
+ {n:'Silicone render',k:'Outside, and built to stay clean',bg:tex('#e7e4db',[.35,.35,.32],1.6,1.6,2,.5,2),gloss:0,a:'Tired pebbledash and bare block',b:'£45 per m²',c:'Dry in two days, no painting',d:'Through-coloured, flexible and self-cleaning in the rain. We scaffold, bead, base coat and finish in under a week.'}];
+const list=document.querySelector('.flist'),sw=document.getElementById('sw');
+const show=i=>{const f=F[i];sw.style.backgroundImage=f.bg;sw.style.setProperty('--gloss',f.gloss);['a','b','c','d'].forEach((k,j)=>document.getElementById('s'+(j+1)).textContent=f[k]);list.querySelectorAll('button').forEach((b,j)=>b.setAttribute('aria-selected',j===i))};
+F.forEach((f,i)=>{const li=document.createElement('li');li.innerHTML=`<button role="tab" aria-selected="false"><i style='background-image:${f.bg.replace(/'/g,"&#39;")}'></i><b>${f.n}</b><span>${f.k}</span></button>`;const b=li.firstChild;b.addEventListener('click',()=>show(i));list.appendChild(li)});show(0);
+
+const len=document.getElementById('len'),wid=document.getElementById('wid'),ceil=document.getElementById('ceil'),artex=document.getElementById('artex');
+const calc=()=>{const l=+len.value,w=+wid.value;let area=2*(l+w)*2.4*.88+(ceil.checked?l*w:0);let rate=14+(artex.checked?6:0);const price=Math.max(280,Math.round(area*rate/10)*10);const d=area>75?3:area>42?2:1;
+document.getElementById('lv').textContent=l.toFixed(1)+' m';document.getElementById('wv').textContent=w.toFixed(1)+' m';document.getElementById('sum').textContent='£'+price.toLocaleString('en-GB');document.getElementById('days').innerHTML=Math.round(area)+' m² of plaster<br>'+d+(d>1?' days':' day')+' on site'};
+[len,wid,ceil,artex].forEach(e=>e.addEventListener('input',calc));calc();
+document.getElementById('wa').addEventListener('click',e=>{e.preventDefault();document.getElementById('wan').style.display='block'});
+})();
+</script>
+</body>
+</html>
